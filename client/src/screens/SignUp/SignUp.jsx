@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function SignUp(props) {
   const [formData, setFormData] = useState({
@@ -56,6 +57,7 @@ export default function SignUp(props) {
       </label>
       <br />
       <button>Submit</button>
+      <div>Already have an account? <Link to='/login'>Login</Link></div>
     </form>
   );
 }

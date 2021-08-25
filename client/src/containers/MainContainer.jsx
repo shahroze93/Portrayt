@@ -29,7 +29,7 @@ export default function MainContainer(props) {
         <Route path='/posts/new'>
           <PostCreate handleCreate={handleCreate} />
         </Route>
-        <Route path='/posts'>
+        <Route path='/'>
           <Posts posts={posts} />
         </Route>
       </Switch>

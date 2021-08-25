@@ -5,7 +5,7 @@ export default function Layout(props) {
   const { currentUser, handleLogout } = props;
   return (
     <header>
-      <h1>PORTRAYAL</h1>
+      <Link to='/'><h1>PORTRAYAL</h1></Link>
       {currentUser ? (
         <div>
           <p>{currentUser.username}</p>
