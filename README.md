@@ -44,7 +44,7 @@ Portrayt is a full stack social media application that allows users to post and 
 |   React Router   | Site navigation and routing for single page applications |
 |      Rails       |  Backend model-view-controller framework for Ruby |
 |  Axios | 	Promise-based HTTP client for the browser and node.js |
-|  PostgreSQL  | Sets postgresql as the database for Active Record |
+|  PostgreSQL  | PostgreSQL is an advanced, enterprise class open source relational database that supports both SQL (relational) and JSON (non-relational) querying. |
 | CORS | Cross-origin resource sharing, makes cross-origin AJAX possible |
 | bcrypt | Password hashing function for authentication |
 | jwt | Token-based authentication for tracking logged in users on frontend |
@@ -55,11 +55,11 @@ Portrayt is a full stack social media application that allows users to post and 
 
 #### Wireframes
 
-The wireframes below depict Portrayt's web and phone formats. The homepage contains posts by all users which can be filtered by clicking the segment buttons. The individual post pages will have 2 components including the image, description, an optional URL link and a comments section. Users will have access to their own posts where they can edit or delete posts which they have created. The navbar will have create buttons which will lead to forms and submit buttons for creating new data.
+The wireframes below depict Portrayt's web and phone formats. The homepage contains posts by all users which can be filtered by clicking the segment buttons. The individual post pages will contain the image, description, an optional URL link and a comments section. Users will have access to their own posts where they can edit or delete posts which they have created. The navbar will have create buttons which will lead to forms and submit buttons for creating new data.
 
 - Overall Wireframe with Connections
 
-![Wireframe](https://whimsical.com/wireframe-7NuH7Q7YfmmnbLc4ShdwfS)
+https://whimsical.com/wireframe-7NuH7Q7YfmmnbLc4ShdwfS
 
 ![Wireframe Overview](https://imgur.com/Fu0r1lo.png)
 
@@ -82,7 +82,7 @@ The wireframes below depict Portrayt's web and phone formats. The homepage conta
 
 - User Created Posts
 
-![User Created Posts](url)
+![User Created Posts](https://imgur.com/NWAT8V1.png)
 
 - Create Posts & Edit Post
 
@@ -95,7 +95,7 @@ The wireframes below depict Portrayt's web and phone formats. The homepage conta
 
 #### Component Tree
 
-[Component Tree](https://imgur.com/35Yu3gf.png)
+![Component Tree](https://imgur.com/35Yu3gf.png)
 
 #### Component Architecture
 
