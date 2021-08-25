@@ -27,27 +27,27 @@ Portrayt is a full stack social media application that allows users to post and 
 
 ### Goals
 
-* Build a Ruby on Rails server with RESTful JSON endpoints
-* Build a database with min three tables: users, posts, segments, comments
-* Create full CRUD functionality for creating, updating, reading, and deleting post information
-* User authentication and authorization to limit user interaction with the app's components
-* Non-authorized routes for home page and authorized routes for viewing, creating and editing user made posts
-* Implement CSS Flexbox and Grid
-* Implement media queries for mobile and desktop
-<br>
+- Build a Ruby on Rails server with RESTful JSON endpoints
+- Build a database with min three tables: users, posts, segments, comments
+- Create full CRUD functionality for creating, updating, reading, and deleting post information
+- User authentication and authorization to limit user interaction with the app's components
+- Non-authorized routes for home page and authorized routes for viewing, creating and editing user made posts
+- Implement CSS Flexbox and Grid
+- Implement media queries for mobile and desktop
+  <br>
 
 ### Libraries and Dependencies
 
-|     Library      | Description                                |
-| :--------------: | :----------------------------------------- |
-|      React       | Front-end user interaction and state management through manipulation of a virtual DOM. |
-|   React Router   | Site navigation and routing for single page applications |
-|      Rails       |  Backend model-view-controller framework for Ruby |
-|  Axios | 	Promise-based HTTP client for the browser and node.js |
+|   Library    | Description                                                                                                                                         |
+| :----------: | :-------------------------------------------------------------------------------------------------------------------------------------------------- |
+|    React     | Front-end user interaction and state management through manipulation of a virtual DOM.                                                              |
+| React Router | Site navigation and routing for single page applications                                                                                            |
+|    Rails     | Backend model-view-controller framework for Ruby                                                                                                    |
+|    Axios     | Promise-based HTTP client for the browser and node.js                                                                                               |
 |  PostgreSQL  | PostgreSQL is an advanced, enterprise class open source relational database that supports both SQL (relational) and JSON (non-relational) querying. |
-| CORS | Cross-origin resource sharing, makes cross-origin AJAX possible |
-| bcrypt | Password hashing function for authentication |
-| jwt | Token-based authentication for tracking logged in users on frontend |
+|     CORS     | Cross-origin resource sharing, makes cross-origin AJAX possible                                                                                     |
+|    bcrypt    | Password hashing function for authentication                                                                                                        |
+|     jwt      | Token-based authentication for tracking logged in users on frontend                                                                                 |
 
 <br>
 
@@ -61,7 +61,7 @@ The wireframes below depict Portrayt's web and phone formats. The homepage conta
 
 https://whimsical.com/wireframe-7NuH7Q7YfmmnbLc4ShdwfS
 
-![Wireframe Overview](https://imgur.com/F7K3r8A.png)
+![Wireframe Overview](https://imgur.com/KtxwNnx.png)
 
 - Desktop Landing (Without Login)
 
@@ -99,7 +99,7 @@ https://whimsical.com/wireframe-7NuH7Q7YfmmnbLc4ShdwfS
 
 #### Component Architecture
 
-``` structure
+```structure
 
 src
 |__ App.jsx
@@ -166,38 +166,38 @@ src
 
 ### Time Estimates
 
-| Component | Priority | Estimated Time | Time Invested | Actual Time |
-| --- | :---: | :---: | :---: | :---: |
-| Backend CRUD | M | 4 hrs| hrs | N/A hrs |
-| Backend Auth| M | 2 hrs| hrs | N/A hrs |
-| Seed DB | M | 2 hrs| hrs | N/A hrs | 
-| create frontend component structure | M | 1 hrs| hrs | N/A hrs |
-| frontend CRUD | M | 4 hrs| hrs | N/A hrs |
-| create routes| M | 2 hrs| hrs | N/A hrs |
-| create homepage screen | M | 2 hrs| hrs | N/A hrs |
-| create footer screen | M | 1 hrs| hrs | N/A hrs |
-| create navbar screen | M | 1 hrs| hrs | N/A hrs |
-| create edit user | M | 2 hrs| hrs | N/A hrs |
-| create CreatePost page| M | 2 hrs| hrs | N/A hrs |
-| create EditPost page| M | 2 hrs| hrs | N/A hrs |
-| create PostDetails page| M | 2 hrs| hrs | N/A hrs |
-| create user created posts page| M | 2 hrs| hrs | N/A hrs |
-| create user sign-in/login screens| M | 2 hrs| hrs | N/A hrs |
-| create Comments component(crud)| M | 3 hrs| hrs | N/A hrs |
-| Basic CSS | M | 3 hrs| hrs | N/A hrs |
-| Advanced CSS Navbar/Footer | M | 1 hrs| hrs | N/A hrs |
-| Advanced CSS Homepage | M | 2 hrs| hrs | N/A hrs |
-| Advanced CSS UserPosts | M | 1 hrs| hrs | N/A hrs |
-| Advaced CSS PostDetails | M | 2 hrs| hrs | N/A hrs |
-| Advaced CSS Login/SignUp/EditAccount | M | 1 hrs| hrs | N/A hrs |
-| Advance styling for css(flexbox) or (grid) | M | 3 hrs| hrs | N/A hrs |
-| Add media query for forms | H | 2 hrs| hrs | N/A hrs |
-| Add media query for Homepage| H | 2hrs| hrs | N/A hrs |
-| Add media query for PostDetails| H| 2 hrs| hrs | N/A hrs |
-| Add media query for UserPosts | H | 2 hrs| hrs |N/A hrs |
-| Debugging Backend | H | 3 hrs| hrs |N/A hrs |
-| Debugging Fullstack | H | 3 hrs| hrs |N/A hrs |
-| Total | --- | 61 hrs| hrs | hrs |
+| Component                                  | Priority | Estimated Time | Time Invested | Actual Time |
+| ------------------------------------------ | :------: | :------------: | :-----------: | :---------: |
+| Backend CRUD                               |    M     |     4 hrs      |      hrs      |   N/A hrs   |
+| Backend Auth                               |    M     |     2 hrs      |      hrs      |   N/A hrs   |
+| Seed DB                                    |    M     |     2 hrs      |      hrs      |   N/A hrs   |
+| create frontend component structure        |    M     |     1 hrs      |      hrs      |   N/A hrs   |
+| frontend CRUD                              |    M     |     4 hrs      |      hrs      |   N/A hrs   |
+| create routes                              |    M     |     2 hrs      |      hrs      |   N/A hrs   |
+| create homepage screen                     |    M     |     2 hrs      |      hrs      |   N/A hrs   |
+| create footer screen                       |    M     |     1 hrs      |      hrs      |   N/A hrs   |
+| create navbar screen                       |    M     |     1 hrs      |      hrs      |   N/A hrs   |
+| create edit user                           |    M     |     2 hrs      |      hrs      |   N/A hrs   |
+| create CreatePost page                     |    M     |     2 hrs      |      hrs      |   N/A hrs   |
+| create EditPost page                       |    M     |     2 hrs      |      hrs      |   N/A hrs   |
+| create PostDetails page                    |    M     |     2 hrs      |      hrs      |   N/A hrs   |
+| create user created posts page             |    M     |     2 hrs      |      hrs      |   N/A hrs   |
+| create user sign-in/login screens          |    M     |     2 hrs      |      hrs      |   N/A hrs   |
+| create Comments component(crud)            |    M     |     3 hrs      |      hrs      |   N/A hrs   |
+| Basic CSS                                  |    M     |     3 hrs      |      hrs      |   N/A hrs   |
+| Advanced CSS Navbar/Footer                 |    M     |     1 hrs      |      hrs      |   N/A hrs   |
+| Advanced CSS Homepage                      |    M     |     2 hrs      |      hrs      |   N/A hrs   |
+| Advanced CSS UserPosts                     |    M     |     1 hrs      |      hrs      |   N/A hrs   |
+| Advaced CSS PostDetails                    |    M     |     2 hrs      |      hrs      |   N/A hrs   |
+| Advaced CSS Login/SignUp/EditAccount       |    M     |     1 hrs      |      hrs      |   N/A hrs   |
+| Advance styling for css(flexbox) or (grid) |    M     |     3 hrs      |      hrs      |   N/A hrs   |
+| Add media query for forms                  |    H     |     2 hrs      |      hrs      |   N/A hrs   |
+| Add media query for Homepage               |    H     |      2hrs      |      hrs      |   N/A hrs   |
+| Add media query for PostDetails            |    H     |     2 hrs      |      hrs      |   N/A hrs   |
+| Add media query for UserPosts              |    H     |     2 hrs      |      hrs      |   N/A hrs   |
+| Debugging Backend                          |    H     |     3 hrs      |      hrs      |   N/A hrs   |
+| Debugging Fullstack                        |    H     |     3 hrs      |      hrs      |   N/A hrs   |
+| Total                                      |   ---    |     61 hrs     |      hrs      |     hrs     |
 
 <br>
 
@@ -208,18 +208,18 @@ src
 ![ERD](https://imgur.com/pgDCo08.png)
 <br>
 
-***
+---
 
 ## Post-MVP
 
-* Dark Mode
-* Search function
-* Advanced CSS
-* Like/Heart button
-* Users can comment on each others posts - full CRUD
-* Users can edit their account
+- Dark Mode
+- Search function
+- Advanced CSS
+- Like/Heart button
+- Users can comment on each others posts - full CRUD
+- Users can edit their account
 
-***
+---
 
 ## Code Showcase
 
