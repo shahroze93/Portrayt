@@ -61,7 +61,7 @@ The wireframes below depict Portrayt's web and phone formats. The homepage conta
 
 https://whimsical.com/wireframe-7NuH7Q7YfmmnbLc4ShdwfS
 
-![Wireframe Overview](https://imgur.com/KouL1Sc.png)
+![Wireframe Overview](https://imgur.com/F7K3r8A.png)
 
 - Desktop Landing (Without Login)
 
