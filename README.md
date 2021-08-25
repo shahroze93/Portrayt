@@ -91,11 +91,11 @@ https://whimsical.com/wireframe-7NuH7Q7YfmmnbLc4ShdwfS
 
 - Post Details
 
-![Post Details](https://imgur.com/esv3lis.png)
+![Post Details](https://imgur.com/KoZWgy1.png)
 
 #### Component Tree
 
-![Component Tree](https://imgur.com/KoZWgy1.png)
+![Component Tree](https://imgur.com/35Yu3gf.png)
 
 #### Component Architecture
 
