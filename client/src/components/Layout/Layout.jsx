@@ -9,16 +9,15 @@ export default function Layout(props) {
       {currentUser ? (
         <div>
           <p>{currentUser.username}</p>
-          <button onClick={handleLogout}>Logout</button>
         </div>
       ) : (
         <Link to='/login'>Login/Register</Link>
       )}
-      <hr />
       {currentUser && (
         <div>
-          <Link to='/foods'>Foods</Link>
-          <Link to='/flavors'>Flavors</Link>
+          <Link to='/create-post'>Create Post</Link>
+          <Link to='/myposts'>My Posts</Link>
+          <button onClick={handleLogout}>Logout</button>
         </div>
       )}
       {props.children}
