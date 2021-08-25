@@ -1,5 +1,5 @@
 class SegmentsController < ApplicationController
-  before_action :set_segment, only: [:show, :update, :destroy]
+  before_action :set_segment, only: [:show, :update, :destroy, :add_to_post]
 
   # GET /segments
   def index
@@ -36,6 +36,13 @@ class SegmentsController < ApplicationController
   # DELETE /segments/1
   def destroy
     @segment.destroy
+  end
+
+  def add_to_post
+    @post = Post.find(params[:post_id])
+    @post.segments << @segment
+
+    render json: @post, include: :segments
   end
 
   private
