@@ -29,6 +29,11 @@ Post.create!(name: "Post03",
             link_url: "https://www.danslelakehouse.com/2021/07/summer-tablescape-with-loom-table.html",
             description: "Easy summer tablescape with affordable and custom table linens - in ANY size!",
             user: @admin)
+Post.create!(name: "Its all about happiness", 
+            img_url: "https://photo.dwellinggawker.com/wp-content/uploads/2021/08/86073.jpg",
+            link_url: "",
+            description: "Two backyards, beautiful garden and a lot of good memories: this is Vavina's house! Check it out.",
+            user: @admin)
 
 
 puts "#{Post.count} posts created"
