@@ -205,7 +205,7 @@ src
 
 #### ERD Model
 
-[ERD](https://imgur.com/pgDCo08.png)
+![ERD](https://imgur.com/pgDCo08.png)
 <br>
 
 ***
