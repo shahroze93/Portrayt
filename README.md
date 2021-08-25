@@ -164,7 +164,7 @@ src
 
 ```
 
-# Estimated Timeframes
+### Time Estimates
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: | :---: | :---: | :---: |
