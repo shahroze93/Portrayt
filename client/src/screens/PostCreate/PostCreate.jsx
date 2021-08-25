@@ -20,14 +20,19 @@ export default function PostCreate(props) {
 
   return (
     <section>
-
+      <h3>Create Post</h3>
+    <div className="newPostContainer">
+      <div className="postTitle">{formData.name}</div>
+      <img className="postIMG" src={formData.img_url} alt={formData.name} />
+      <div className="postLink">{formData.link_url}</div>
+      <div className="postDesc">{formData.description}</div>
+      </div>
+    <br />
     <form
       onSubmit={(e) => {
         e.preventDefault();
         handleCreate(formData);
-      }}
-    >
-      <h3>Create Post</h3>
+      }}>
       <label>
         Name:
         <input type='text' name='name' value={name} onChange={handleChange} />
