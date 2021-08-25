@@ -5,6 +5,7 @@ import { loginUser, registerUser, verifyUser, removeToken } from './services/aut
 import Layout from './components/Layout/Layout';
 import Login from './screens/SignIn/SignIn';
 import SignUp from './screens/SignUp/SignUp';
+import MainContainer from './containers/MainContainer';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -46,6 +47,9 @@ function App() {
           </Route>
           <Route path='/signup'>
             <SignUp handleSignUp={handleSignUp} />
+          </Route>
+          <Route path='/'>
+            <MainContainer currentUser={currentUser} />
           </Route>
         </Switch>
       </Layout>

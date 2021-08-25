@@ -15,7 +15,7 @@ export default function Layout(props) {
       )}
       {currentUser && (
         <div>
-          <Link to='/create-post'>Create Post</Link>
+          <Link to='/posts/new'>Create Post</Link>
           <Link to='/myposts'>My Posts</Link>
           <button onClick={handleLogout}>Logout</button>
         </div>
