@@ -3,6 +3,7 @@ import { Switch, Route, useHistory } from 'react-router-dom';
 import { getAllPosts, postPost, putPost, deletePost } from '../services/posts';
 import Posts from '../screens/Posts/Posts';
 import PostCreate from '../screens/PostCreate/PostCreate';
+import UserPosts from '../screens/UserPosts/UserPosts';
 
 export default function MainContainer(props) {
   const [posts, setPosts] = useState([]);
@@ -20,7 +21,7 @@ export default function MainContainer(props) {
   const handleCreate = async (formData) => {
     const postData = await postPost(formData);
     setPosts((prevState) => [...prevState, postData]);
-    history.push('/posts');
+    history.push('/');
   };
 
   return (
@@ -29,8 +30,12 @@ export default function MainContainer(props) {
         <Route path='/posts/new'>
           <PostCreate handleCreate={handleCreate} />
         </Route>
-        <Route path='/'>
+        <Route exact path='/'>
           <Posts posts={posts} />
+        </Route>
+        <Route exact path='/myposts'>
+          <UserPosts posts={posts}
+          currentUser={currentUser}/>
         </Route>
       </Switch>
     </div>

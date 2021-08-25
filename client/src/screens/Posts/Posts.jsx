@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 export default function Posts(props) {
   const { posts } = props;
-
+  console.log(posts)
   return (
     <section>
       <div>
@@ -15,8 +15,9 @@ export default function Posts(props) {
           <Link to={`/posts/${post.id}`}>
             <h4>{post.name}</h4>
             <img src={post.img_url} alt={post.name} />
-            </Link>
-            <p>{post.description}</p>
+          </Link>
+          <p>{post.user?.username}</p>
+          <p>{post.description}</p>
         </div>
       ))}
     </section>
