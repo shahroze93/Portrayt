@@ -61,33 +61,33 @@ The wireframes below depict Portrayt's web and phone formats. The homepage conta
 
 https://whimsical.com/wireframe-7NuH7Q7YfmmnbLc4ShdwfS
 
-![Wireframe Overview](https://imgur.com/Fu0r1lo.png)
+![Wireframe Overview](https://imgur.com/KouL1Sc.png)
 
 - Desktop Landing (Without Login)
 
-![Homepage](https://imgur.com/oZEtdQW.png)
+![Homepage](https://imgur.com/0WtDwmD.png)
 
 - Desktop Landing (after Login)
 
-![Homepage](https://imgur.com/ftwyQJJ.png)
+![Homepage](https://imgur.com/r9m6Gl5.png)
 
 - Login & Sign Up
 
-![Login](https://imgur.com/cRjInie.png)
-![Sign Up](https://imgur.com/DuOMg0Z.png)
+![Login](https://imgur.com/Qz8ZyKt.png)
+![Sign Up](https://imgur.com/q0wPTdZ.png)
 
 - Edit Account
 
-![Edit Account](https://imgur.com/r7FhjYZ.png)
+![Edit Account](https://imgur.com/LwGfFnJ.png)
 
 - User Created Posts
 
-![User Created Posts](https://imgur.com/NWAT8V1.png)
+![User Created Posts](https://imgur.com/D4B47z9.png)
 
 - Create Posts & Edit Post
 
-![Create Post](https://imgur.com/qJXTVCR.png)
-![Edit Post](https://imgur.com/jGVxrbh.png)
+![Create Post](https://imgur.com/R5Qog2O.png)
+![Edit Post](https://imgur.com/unaXgh8.png)
 
 - Post Details
 
@@ -95,7 +95,7 @@ https://whimsical.com/wireframe-7NuH7Q7YfmmnbLc4ShdwfS
 
 #### Component Tree
 
-![Component Tree](https://imgur.com/35Yu3gf.png)
+![Component Tree](https://imgur.com/KoZWgy1.png)
 
 #### Component Architecture
 
