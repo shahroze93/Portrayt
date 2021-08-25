@@ -25,7 +25,7 @@ export default function SignUp(props) {
         handleSignUp(formData);
       }}
     >
-      <h3>Register</h3>
+      <h3>Sign Up</h3>
       <label>
         Username:
         <input

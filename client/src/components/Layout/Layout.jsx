@@ -11,7 +11,10 @@ export default function Layout(props) {
           <p>{currentUser.username}</p>
         </div>
       ) : (
-        <Link to='/login'>Login/Register</Link>
+          <div>
+          <Link to='/login'>Login</Link>
+          <Link to='/signup'>Sign Up</Link>
+          </div>
       )}
       {currentUser && (
         <div>
