@@ -197,7 +197,7 @@ src
 | Add media query for UserPosts | H | 2 hrs| hrs |N/A hrs |
 | Debugging Backend | H | 3 hrs| hrs |N/A hrs |
 | Debugging Fullstack | H | 3 hrs| hrs |N/A hrs |
-| Total | 61 hrs | hrs| hrs | hrs |
+| Total | --- | 61 hrs| hrs | hrs |
 
 <br>
 
