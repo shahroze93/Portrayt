@@ -38,16 +38,17 @@ Portrayt is a full stack social media application that allows users to post and 
 
 ### Libraries and Dependencies
 
-|   Library    | Description                                                                                                                                         |
-| :----------: | :-------------------------------------------------------------------------------------------------------------------------------------------------- |
-|    React     | Front-end user interaction and state management through manipulation of a virtual DOM.                                                              |
-| React Router | Site navigation and routing for single page applications                                                                                            |
-|    Rails     | Backend model-view-controller framework for Ruby                                                                                                    |
-|    Axios     | Promise-based HTTP client for the browser and node.js                                                                                               |
-|  PostgreSQL  | PostgreSQL is an advanced, enterprise class open source relational database that supports both SQL (relational) and JSON (non-relational) querying. |
-|     CORS     | Cross-origin resource sharing, makes cross-origin AJAX possible                                                                                     |
-|    bcrypt    | Password hashing function for authentication                                                                                                        |
-|     jwt      | Token-based authentication for tracking logged in users on frontend                                                                                 |
+|      Library      | Description                                                                                                                                         |
+| :---------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------- |
+|       React       | Front-end user interaction and state management through manipulation of a virtual DOM.                                                              |
+|   React Router    | Site navigation and routing for single page applications                                                                                            |
+|       Rails       | Backend model-view-controller framework for Ruby                                                                                                    |
+|       Axios       | Promise-based HTTP client for the browser and node.js                                                                                               |
+|    PostgreSQL     | PostgreSQL is an advanced, enterprise class open source relational database that supports both SQL (relational) and JSON (non-relational) querying. |
+|       CORS        | Cross-origin resource sharing, makes cross-origin AJAX possible                                                                                     |
+|      bcrypt       | Password hashing function for authentication                                                                                                        |
+|        jwt        | Token-based authentication for tracking logged in users on frontend                                                                                 |
+| React Masonry CSS | a React Component with a simple interface to order items into the desired columns at specified breakpoints.                                         |
 
 <br>
 
@@ -183,13 +184,13 @@ src
 | create PostDetails page                    |    M     |     2 hrs      |      hrs      |   N/A hrs   |
 | create user created posts page             |    M     |     2 hrs      |      hrs      |   N/A hrs   |
 | create user sign-in/login screens          |    M     |     2 hrs      |      hrs      |   N/A hrs   |
-| create Comments component(crud)            |    M     |     3 hrs      |      hrs      |   N/A hrs   |
+| create Comments component(CRUD))           |    M     |     3 hrs      |      hrs      |   N/A hrs   |
 | Basic CSS                                  |    M     |     3 hrs      |      hrs      |   N/A hrs   |
 | Advanced CSS Navbar/Footer                 |    M     |     1 hrs      |      hrs      |   N/A hrs   |
 | Advanced CSS Homepage                      |    M     |     2 hrs      |      hrs      |   N/A hrs   |
 | Advanced CSS UserPosts                     |    M     |     1 hrs      |      hrs      |   N/A hrs   |
-| Advaced CSS PostDetails                    |    M     |     2 hrs      |      hrs      |   N/A hrs   |
-| Advaced CSS Login/SignUp/EditAccount       |    M     |     1 hrs      |      hrs      |   N/A hrs   |
+| Advanced CSS PostDetails                   |    M     |     2 hrs      |      hrs      |   N/A hrs   |
+| Advanced CSS Login/SignUp/EditAccount      |    M     |     1 hrs      |      hrs      |   N/A hrs   |
 | Advance styling for css(flexbox) or (grid) |    M     |     3 hrs      |      hrs      |   N/A hrs   |
 | Add media query for forms                  |    H     |     2 hrs      |      hrs      |   N/A hrs   |
 | Add media query for Homepage               |    H     |      2hrs      |      hrs      |   N/A hrs   |
