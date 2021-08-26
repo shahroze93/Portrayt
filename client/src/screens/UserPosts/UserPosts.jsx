@@ -1,20 +1,7 @@
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import { getOneUser } from '../../services/users';
 
 export default function UserPosts(props) {
   const { posts, handleDelete, currentUser } = props;
-  const [userData, setUserData] = useState('')
-
-  useEffect(() => {
-    const fetchUser = async () => {
-      const singleUser = await getOneUser();
-      setUserData(singleUser);
-    };
-    fetchUser();
-  }, []);
-
-  console.log(userData)
 
   return (
     <div>
