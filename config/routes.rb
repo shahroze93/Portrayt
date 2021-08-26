@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comments
   resources :segments
   resources :posts
   post '/auth/login', to: 'authentication#login'
