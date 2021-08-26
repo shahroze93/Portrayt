@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :update, :destroy]
+  before_action :authorize_request, only: [:create, :update, :destroy]
 
   # GET /comments
   def index
@@ -38,7 +39,7 @@ class CommentsController < ApplicationController
     @comment.destroy
   end
 
-  def add_to_post
+  def comment_to_post
     @post = Post.find(params[:id])
     @comment = Comment.find(params[:commentId])
 
