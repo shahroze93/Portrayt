@@ -40,15 +40,6 @@ export default function MainContainer(props) {
     history.push('/');
   };
 
-  // useEffect(() => {
-  //   const fetchUser = async () => {
-  //     const singleUser = await getUser();
-  //     setPosts(singleUser);
-  //   };
-  //   fetchUser();
-  // }, []);
-
-
   return (
     <div>
       <Switch>
