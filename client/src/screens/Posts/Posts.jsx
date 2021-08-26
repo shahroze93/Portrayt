@@ -26,7 +26,9 @@ export default function Posts(props) {
               <h4>{post.name}</h4>
               <img src={post.img_url} alt={post.name} />
             </Link>
-            <p>{post.user?.username}</p>
+            <Link to={`/users/${post.user?.id}`}>
+              <h4>{post.user?.username}</h4>
+            </Link>
             <p>{post.description}</p>
             {post?.segments?.map((segment) => (
               <p key={segment.id}>{segment.name}</p>
