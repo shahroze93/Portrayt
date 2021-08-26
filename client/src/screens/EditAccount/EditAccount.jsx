@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
 
-
 export default function EditAccount(props) {
   const [formData, setFormData] = useState({
     username: '',
@@ -49,7 +48,8 @@ export default function EditAccount(props) {
       </label>
       <br />
       <button>Update</button>
-      <button onClick={() => userDelete()}>Delete</button>
+      <br />
+      <button onClick={() => userDelete()}>Delete Account</button>
     </form>
   );
 }

@@ -41,12 +41,20 @@ function App() {
   };
 
   const userDelete = async () => {
-    await deleteUser(currentUser.id);
-    setCurrentUser(null);
-    localStorage.removeItem('authToken');
-    removeToken();
-    history.push('/');
-  };
+    let entry = prompt("Please enter email address to confirm account deletion:", "");
+    if (entry === null || entry === "") {
+      alert("NO INPUT - DELETION CANCELLED")
+    } else if (entry === currentUser.email) {
+      alert("DELETION COMPLETE")
+      await deleteUser(currentUser.id);
+      setCurrentUser(null);
+      localStorage.removeItem('authToken');
+      removeToken();
+      history.push('/');
+    } else {
+      alert("INCORRECT ENTRY - TRY AGAIN TO CONFIRM")
+    }
+  }
 
   return (
     <div className="App">
