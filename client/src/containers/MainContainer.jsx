@@ -8,6 +8,7 @@ import PostEdit from '../screens/PostEdit/PostEdit';
 
 export default function MainContainer(props) {
   const [posts, setPosts] = useState([]);
+  const [segments, setSegments] = useState([]);
   const { currentUser } = props;
   const history = useHistory();
 
@@ -17,6 +18,14 @@ export default function MainContainer(props) {
       setPosts(postList);
     };
     fetchPosts();
+  }, []);
+  
+  useEffect(() => {
+    const fetchSegments = async () => {
+      const segmentList = await getAllSegments();
+      setSegments(segmentList);
+    };
+    fetchSegments();
   }, []);
 
   const handleCreate = async (formData) => {
