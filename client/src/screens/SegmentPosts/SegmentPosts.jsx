@@ -8,11 +8,11 @@ export default function SegmentPosts(props) {
   const { id } = useParams();
 
   useEffect(() => {
-    const fetchFoodItem = async () => {
+    const fetchSegment = async () => {
       const singleSegment = await getOneSegment(id);
       setSegData(singleSegment);
     };
-    fetchFoodItem();
+    fetchSegment();
   }, [id]);
 
   return (

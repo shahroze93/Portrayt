@@ -13,7 +13,6 @@ export default function EditAccount(props) {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-
       }}
     >
       <h3>Edit Account</h3>
