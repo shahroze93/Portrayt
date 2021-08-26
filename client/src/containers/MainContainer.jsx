@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Switch, Route, useHistory } from 'react-router-dom';
 import { getAllPosts, postPost, putPost, deletePost } from '../services/posts';
-import { getAllPosts, postPost, putPost, deletePost } from '../services/posts';
+import { getAllSegments } from '../services/segments';
 import Posts from '../screens/Posts/Posts';
 import PostCreate from '../screens/PostCreate/PostCreate';
 import UserPosts from '../screens/UserPosts/UserPosts';
