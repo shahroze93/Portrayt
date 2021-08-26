@@ -12,6 +12,15 @@ export default function PostEdit(props) {
   const {id} = useParams();
 
 
+
+  const handleChange = (e) => {
+    const {name, value} = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }))
+  }
+
   return (
     <section>
     <div className="newPostContainer">
