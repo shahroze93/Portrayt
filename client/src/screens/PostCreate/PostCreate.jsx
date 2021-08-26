@@ -34,17 +34,13 @@ export default function PostCreate(props) {
       </div>
       <br />
       <form
-        onSubmit={
-          (selectedSegment !== "default" ? (
-            (e) => {
-              e.preventDefault();
-              const category = segments.find(
-                (segment) => segment.name === selectedSegment
-              );
-              console.log(category);
-              handleCreate(formData, category.id);
-            }) : console.log("Error")
-        )}>
+        onSubmit={(e) => {
+          e.preventDefault();
+          const category = segments.find(
+            (segment) => segment.name === selectedSegment
+          );
+          handleCreate(formData, category.id);
+        }}>
         <label>
           Name:
           <input type="text" name="name" value={name} onChange={handleChange} />

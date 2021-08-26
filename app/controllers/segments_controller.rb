@@ -43,6 +43,7 @@ class SegmentsController < ApplicationController
     @segment = Segment.find(params[:segmentId])
 
     @post.segments << @segment
+    render json: @post
   end
 
   # private
