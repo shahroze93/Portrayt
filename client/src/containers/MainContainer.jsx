@@ -4,6 +4,7 @@ import { getAllPosts, postPost, putPost, deletePost } from '../services/posts';
 import Posts from '../screens/Posts/Posts';
 import PostCreate from '../screens/PostCreate/PostCreate';
 import UserPosts from '../screens/UserPosts/UserPosts';
+import PostEdit from '../screens/PostEdit/PostEdit';
 
 export default function MainContainer(props) {
   const [posts, setPosts] = useState([]);
@@ -24,10 +25,19 @@ export default function MainContainer(props) {
     history.push('/');
   };
 
-
   const handleDelete = async (id) => {
     await deletePost(id);
     setPosts((prevState) => prevState.filter((post) => post.id !== id));
+  };
+
+  const handleUpdate = async (id, formData) => {
+    const postData = await putPost(id, formData);
+    setPosts((prevState) =>
+      prevState.map((post) => {
+        return post.id === Number(id) ? postData : post;
+      })
+    );
+    history.push('/');
   };
 
   return (
@@ -35,6 +45,9 @@ export default function MainContainer(props) {
       <Switch>
         <Route path='/posts/new'>
           <PostCreate handleCreate={handleCreate} />
+        </Route>
+        <Route path='/posts/:id/edit'>
+          <PostEdit posts={posts} handleUpdate={handleUpdate} />
         </Route>
         <Route exact path='/'>
           <Posts posts={posts} />
