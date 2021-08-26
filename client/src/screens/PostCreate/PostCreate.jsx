@@ -10,6 +10,14 @@ export default function PostCreate(props) {
   const { name, img_url, link_url, description } = formData;
   const { handleCreate } = props;
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
   return (
     <section>
       <h3>Create Post</h3>
@@ -57,14 +65,14 @@ export default function PostCreate(props) {
             onChange={handleChange}
           />
         </label>
-        <select onChange={handleChange} defaultValue="default">
+        {/* <select onChange={handleChange} defaultValue="default">
           <option disabled value="default">
             -- Select Product Segment --
           </option>
           {segments.map((segment) => (
             <option value={segment.id}>{segment.name}</option>
           ))}
-        </select>
+        </select> */}
         <button>Submit</button>
       </form>
     </section>
