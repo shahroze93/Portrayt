@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { getOnePost } from "../../services/posts";
 
-export default function PostDetails(props) {
+export default function PostDetails() {
   const [postData, setPostData] = useState(null);
   const { id } = useParams();
 
@@ -17,15 +17,14 @@ export default function PostDetails(props) {
 
   return (
     <section>
-      <h4>{postData.name}</h4>
-      <img src={postData.img_url} alt={post.name} />
-      <h4>{postData.user?.username}</h4>
-      <p>{postData.description}</p>
-      {postData?.segments?.map((segment) => (
-        <Link key={segment.id} to={`/segments/${segment.id}`}>
-          <p>{segment.name}</p>
-        </Link>
-      ))}
+      <h2>{postData?.user?.username}</h2>
+      <h4>{postData?.name}</h4>
+      <Link to={`/segments/${postData?.segments[0]?.id}`}>
+        <p>{postData?.segments[0]?.name}</p>
+      </Link>
+      <img src={postData?.img_url} alt={postData?.name} />
+      <p>{postData?.description}</p>
+      <p>{postData?.link_url}</p>
     </section>
   );
 }
