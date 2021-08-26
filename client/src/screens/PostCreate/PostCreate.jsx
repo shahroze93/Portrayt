@@ -23,6 +23,21 @@ export default function PostCreate(props) {
     setSelectedSegment(event.target.value);
   };
 
+  const handleConfirm = (e) => {
+    e.preventDefault();
+    selectedSegment === "default"
+      ? alert("Please choose a category from the dropdown")
+      : handleSubmit(e);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const category = segments.find(
+      (segment) => segment.name === selectedSegment
+    );
+    handleCreate(formData, category.id);
+  };
+
   return (
     <section>
       <h3>Create Post</h3>
@@ -33,14 +48,7 @@ export default function PostCreate(props) {
         <div className="postDesc">{formData.description}</div>
       </div>
       <br />
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          const category = segments.find(
-            (segment) => segment.name === selectedSegment
-          );
-          handleCreate(formData, category.id);
-        }}>
+      <form onSubmit={handleConfirm}>
         <label>
           Name:
           <input type="text" name="name" value={name} onChange={handleChange} />
