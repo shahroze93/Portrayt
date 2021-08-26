@@ -2,6 +2,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import { Switch, Route, useHistory } from 'react-router-dom';
 import { loginUser, registerUser, verifyUser, removeToken } from './services/auth';
+import { deleteUser } from './services/users';
 import Layout from './components/Layout/Layout';
 import Login from './screens/SignIn/SignIn';
 import SignUp from './screens/SignUp/SignUp';
@@ -37,10 +38,18 @@ function App() {
     removeToken();
     history.push('/');
   };
+console.log(currentUser)
+  const userDelete = async () => {
+    await deleteUser(currentUser.id);
+    setCurrentUser(null);
+    localStorage.removeItem('authToken');
+    removeToken();
+    history.push('/');
+  };
 
   return (
     <div className="App">
-      <Layout currentUser={currentUser} handleLogout={handleLogout}>
+      <Layout currentUser={currentUser} handleLogout={handleLogout} userDelete={userDelete}>
         <Switch>
           <Route path='/login'>
             <Login handleLogin={handleLogin} />

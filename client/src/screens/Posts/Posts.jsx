@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 export default function Posts(props) {
   const { posts } = props;
-  console.log(posts)
+
   return (
     <section>
       <div>
