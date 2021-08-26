@@ -16,6 +16,9 @@ export default function PostEdit(props) {
       const postOne = posts.find((post)=> post.id === Number(id));
       setFormData({
         name: postOne.name,
+        img_url: postOne.img_url,
+        link_url: postOne.link_url,
+        description: postOne.description
       })
     }
     if (posts.length) {
