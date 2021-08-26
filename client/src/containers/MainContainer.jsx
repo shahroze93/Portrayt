@@ -24,6 +24,12 @@ export default function MainContainer(props) {
     history.push('/');
   };
 
+
+  const handleDelete = async (id) => {
+    await deletePost(id);
+    setPosts((prevState) => prevState.filter((post) => post.id !== id));
+  };
+
   return (
     <div>
       <Switch>
@@ -35,6 +41,7 @@ export default function MainContainer(props) {
         </Route>
         <Route exact path='/myposts'>
           <UserPosts posts={posts}
+          handleDelete={handleDelete}
           currentUser={currentUser}/>
         </Route>
       </Switch>
