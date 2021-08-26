@@ -11,7 +11,17 @@ export default function PostEdit(props) {
   const {posts, handleUpdate} = props;
   const {id} = useParams();
 
-
+  useEffect(()=> {
+    const fetchPost = () => {
+      const postOne = posts.find((post)=> post.id === Number(id));
+      setFormData({
+        name: postOne.name,
+      })
+    }
+    if (posts.length) {
+      fetchPost()
+    }
+  }, [posts, id])
 
   const handleChange = (e) => {
     const {name, value} = e.target;
