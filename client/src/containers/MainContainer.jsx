@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Switch, Route, useHistory } from 'react-router-dom';
 import { getAllPosts, postPost, putPost, deletePost } from '../services/posts';
+import { getAllPosts, postPost, putPost, deletePost } from '../services/posts';
 import Posts from '../screens/Posts/Posts';
 import PostCreate from '../screens/PostCreate/PostCreate';
 import UserPosts from '../screens/UserPosts/UserPosts';
@@ -59,7 +60,7 @@ export default function MainContainer(props) {
           <PostEdit posts={posts} handleUpdate={handleUpdate} />
         </Route>
         <Route exact path='/'>
-          <Posts posts={posts} />
+          <Posts segments={segments} posts={posts} />
         </Route>
         <Route exact path='/myposts'>
           <UserPosts posts={posts}

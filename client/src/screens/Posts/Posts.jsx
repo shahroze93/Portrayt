@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
 
 export default function Posts(props) {
-  const { posts } = props;
+  const { posts, segments } = props;
 
   return (
     <section>
       <div>
-        <h3>Home Decor</h3>
-        <h3>Fashion</h3>
-        <h3>Crafts</h3>
+      {segments.map((segment) => (
+        <h3 key={segment.id}>{segment.name}</h3>
+      ))}
       </div>
       {posts.map((post) => (
         <div key={post.id}>
