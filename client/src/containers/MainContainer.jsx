@@ -7,6 +7,7 @@ import PostCreate from "../screens/PostCreate/PostCreate";
 import UserPosts from "../screens/UserPosts/UserPosts";
 import PostEdit from "../screens/PostEdit/PostEdit";
 import SegmentPosts from "../screens/SegmentPosts/SegmentPosts";
+import OthersPosts from "../screens/OthersPosts/OthersPosts";
 
 export default function MainContainer(props) {
   const [posts, setPosts] = useState([]);
@@ -81,6 +82,9 @@ export default function MainContainer(props) {
         </Route>
         <Route exact path="/segments/:id">
           <SegmentPosts />
+        </Route>
+        <Route exact path="/users/:id">
+          <OthersPosts />
         </Route>
         <Route exact path="/myposts">
           <UserPosts
