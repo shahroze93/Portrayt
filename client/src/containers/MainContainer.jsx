@@ -13,6 +13,7 @@ export default function MainContainer(props) {
   const [segments, setSegments] = useState([]);
   const { currentUser } = props;
   const history = useHistory();
+  const [toggle, setToggle] = useState(true);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -20,7 +21,7 @@ export default function MainContainer(props) {
       setPosts(postList);
     };
     fetchPosts();
-  }, []);
+  }, [toggle]);
 
   useEffect(() => {
     const fetchSegments = async () => {
@@ -34,7 +35,6 @@ export default function MainContainer(props) {
     const postData = await postPost(formData);
     setPosts((prevState) => [...prevState, postData]);
     handleSegmentAdd(segmentId, postData.id);
-    history.push("/");
   };
 
   const handleDelete = async (id) => {
@@ -59,6 +59,8 @@ export default function MainContainer(props) {
         return post.postId === Number(postId) ? updatePost : post;
       })
     );
+    setToggle((prevToggle) => !prevToggle);
+    history.push("/");
   };
 
   return (

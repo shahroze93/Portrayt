@@ -12,17 +12,25 @@ export default function Posts(props) {
           <h3 key={segment.id}>{segment.name}</h3>
         ))}
       </div>
-      {posts.map((post) => (
-        <div key={post.id}>
-          <Link to={`/posts/${post.id}`}>
-            <h4>{post.name}</h4>
-            <img src={post.img_url} alt={post.name} />
-          </Link>
-          <p>{post.user?.username}</p>
-          <p>{post.description}</p>
-          <p>{post?.segments[0]?.name}</p>
-        </div>
-      ))}
+      {posts
+        ?.sort(
+          ({ id: previousID }, { id: currentID }) => previousID - currentID
+        )
+        .slice(0)
+        .reverse()
+        .map((post) => (
+          <div key={post.id}>
+            <Link to={`/posts/${post.id}`}>
+              <h4>{post.name}</h4>
+              <img src={post.img_url} alt={post.name} />
+            </Link>
+            <p>{post.user?.username}</p>
+            <p>{post.description}</p>
+            {post?.segments?.map((segment) => (
+              <p key={segment.id}>{segment.name}</p>
+            ))}
+          </div>
+        ))}
     </section>
   );
 }
