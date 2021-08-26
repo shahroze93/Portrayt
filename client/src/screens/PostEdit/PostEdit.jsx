@@ -39,6 +39,21 @@ export default function PostEdit(props) {
     setSelectedSegment(event.target.value);
   };
 
+  const handleConfirm = (e) => {
+    e.preventDefault();
+    selectedSegment === "default"
+      ? alert("Please choose a category from the dropdown")
+      : handleSubmit(e);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const category = segments.find(
+      (segment) => segment.name === selectedSegment
+    );
+    handleUpdate(id, formData, category.id);
+  };
+
   return (
     <section>
       <div className="newPostContainer">
@@ -48,15 +63,7 @@ export default function PostEdit(props) {
         <div className="postDesc">{formData.description}</div>
       </div>
       <br />
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          const category = segments.find(
-            (segment) => segment.name === selectedSegment
-          );
-          handleUpdate(id, formData, category.id);
-        }}
-      >
+      <form onSubmit={handleConfirm}>
         <label>
           Name:
           <input
