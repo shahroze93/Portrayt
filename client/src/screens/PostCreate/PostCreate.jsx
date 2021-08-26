@@ -18,6 +18,18 @@ export default function PostCreate(props) {
     }));
   };
 
+  const handleSegmentChange = (e) => {
+    const { value } = e.target;
+    setSelectedFlavor(value);
+  };
+
+    const handleSubmit = async (e) => {
+    e.preventDefault();
+    handleCreate(formData);
+    const AddSegment = await addFlavorToFood(id, selectedFlavor);
+    setFoodItem(foodItem);
+  };
+
   return (
     <section>
       <h3>Create Post</h3>
@@ -29,10 +41,12 @@ export default function PostCreate(props) {
       </div>
     <br />
     <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        handleCreate(formData);
-      }}>
+      // onSubmit={(e) => {
+      //   e.preventDefault();
+      //   handleCreate(formData);
+      // }}
+      onSubmit={handleSubmit}
+      >
       <label>
         Name:
         <input type='text' name='name' value={name} onChange={handleChange} />
