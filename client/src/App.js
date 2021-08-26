@@ -7,6 +7,7 @@ import Layout from './components/Layout/Layout';
 import Login from './screens/SignIn/SignIn';
 import SignUp from './screens/SignUp/SignUp';
 import MainContainer from './containers/MainContainer';
+import EditAccount from './screens/EditAccount/EditAccount';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -38,7 +39,7 @@ function App() {
     removeToken();
     history.push('/');
   };
-console.log(currentUser)
+
   const userDelete = async () => {
     await deleteUser(currentUser.id);
     setCurrentUser(null);
@@ -56,6 +57,9 @@ console.log(currentUser)
           </Route>
           <Route path='/signup'>
             <SignUp handleSignUp={handleSignUp} />
+          </Route>
+          <Route path='/editAccount'>
+            <EditAccount userDelete={userDelete} />
           </Route>
           <Route path='/'>
             <MainContainer currentUser={currentUser} />

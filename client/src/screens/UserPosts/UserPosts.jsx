@@ -6,6 +6,7 @@ export default function UserPosts(props) {
   return (
     <div>
       <h3>My Posts</h3>
+      <Link to={`/edit-account`}>Edit Account</Link>
       {posts.map((post) => (
         <div key={post.id}>
           {currentUser?.id === post.user_id && (

@@ -8,7 +8,7 @@ export default function EditAccount(props) {
     email: '',
     password: '',
   });
-
+  const { userDelete } = props;
 
   return (
     <form
@@ -24,7 +24,7 @@ export default function EditAccount(props) {
           type='text'
           name='username'
           value={formData.username}
-          onChange={handleChange}
+          // onChange={handleChange}
         />
       </label>
       <br />
@@ -34,7 +34,7 @@ export default function EditAccount(props) {
           type='text'
           name='email'
           value={formData.email}
-          onChange={handleChange}
+          // onChange={handleChange}
         />
       </label>
       <br />
@@ -44,12 +44,12 @@ export default function EditAccount(props) {
           type='password'
           name='password'
           value={formData.password}
-          onChange={handleChange}
+          // onChange={handleChange}
         />
       </label>
       <br />
       <button>Update</button>
-
+      <button onClick={() => userDelete()}>Delete</button>
     </form>
   );
 }
