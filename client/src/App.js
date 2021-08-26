@@ -58,7 +58,7 @@ function App() {
           <Route path='/signup'>
             <SignUp handleSignUp={handleSignUp} />
           </Route>
-          <Route path='/editAccount'>
+          <Route path='/edit-account'>
             <EditAccount userDelete={userDelete} />
           </Route>
           <Route path='/'>
