@@ -17,7 +17,15 @@ export default function PostDetails(props) {
 
   return (
     <section>
-      
+      <h4>{postData.name}</h4>
+      <img src={postData.img_url} alt={post.name} />
+      <h4>{postData.user?.username}</h4>
+      <p>{postData.description}</p>
+      {postData?.segments?.map((segment) => (
+        <Link key={segment.id} to={`/segments/${segment.id}`}>
+          <p>{segment.name}</p>
+        </Link>
+      ))}
     </section>
   );
 }
