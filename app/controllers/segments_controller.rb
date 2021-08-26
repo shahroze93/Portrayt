@@ -42,6 +42,7 @@ class SegmentsController < ApplicationController
     @post = Post.find(params[:id])
     @segment = Segment.find(params[:segmentId])
 
+    @post.segments.delete_all
     @post.segments << @segment
     render json: @post
   end
