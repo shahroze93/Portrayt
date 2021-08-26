@@ -4,7 +4,6 @@ import { useParams } from "react-router";
 import { getOneSegment } from "../../services/segments";
 
 export default function SegmentPosts(props) {
-  const { segments } = props;
   const [segData, setSegData] = useState(null);
   const { id } = useParams();
 
