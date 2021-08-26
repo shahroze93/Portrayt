@@ -1,6 +1,7 @@
 class SegmentsController < ApplicationController
   # before_action :set_segment, only: [:show, :update, :destroy, :add_to_post]
 
+
   # GET /segments
   def index
     @segments = Segment.all
@@ -10,6 +11,7 @@ class SegmentsController < ApplicationController
 
   # GET /segments/1
   def show
+    @segment = Segment.find(params[:id])
     render json: @segment, include: [:posts], status: :ok
   end
 
@@ -52,7 +54,7 @@ class SegmentsController < ApplicationController
     def set_segment
       @segment = Segment.find(params[:id])
     end
-
+    
     # Only allow a list of trusted parameters through.
     def segment_params
       params.require(:segment).permit(:name)

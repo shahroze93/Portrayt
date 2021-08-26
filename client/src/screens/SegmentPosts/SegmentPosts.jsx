@@ -16,12 +16,9 @@ export default function SegmentPosts(props) {
     fetchFoodItem();
   }, [id]);
 
-  console.log(segData);
-
   return (
     <section>
-      <h1>HELOOOOOOOOOO</h1>
-      <div>{segData?.name}</div>
+      <h1>{segData?.name}</h1>
       {segData?.posts?.map((post) => (
         <div key={post.id}>
           <Link to={`/posts/${post.id}`}>
