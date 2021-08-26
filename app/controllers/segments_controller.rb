@@ -1,5 +1,5 @@
 class SegmentsController < ApplicationController
-  before_action :set_segment, only: [:show, :update, :destroy, :add_to_post]
+  # before_action :set_segment, only: [:show, :update, :destroy, :add_to_post]
 
   # GET /segments
   def index
@@ -39,13 +39,13 @@ class SegmentsController < ApplicationController
   end
 
   def add_to_post
-    @post = Post.find(params[:post_id])
-    @post.segments << @segment
+    @post = Post.find(params[:id])
+    @segment = Segment.find(params[:segmentId])
 
-    render json: @post, include: :segments
+    @post.segments << @segment
   end
 
-  private
+  # private
     # Use callbacks to share common setup or constraints between actions.
     def set_segment
       @segment = Segment.find(params[:id])

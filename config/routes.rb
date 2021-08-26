@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   post '/auth/login', to: 'authentication#login'
   get '/auth/verify', to: 'authentication#verify'
   resources :users
-  get '/posts/:post_id/segments/:id', to: 'segments#add_to_post'
+  # get '/posts/:post_id/segments/:id', to: 'segments#add_to_post'
+  put '/segments/:segmentId/posts/:id',
+        to: 'segments#add_to_post'
 end

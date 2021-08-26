@@ -39,6 +39,7 @@ export default function PostCreate(props) {
           const category = segments.find(
             (segment) => segment.name === selectedSegment
           );
+          console.log(category);
           handleCreate(formData, category.id);
         }}
       >
@@ -73,14 +74,6 @@ export default function PostCreate(props) {
             onChange={handleChange}
           />
         </label>
-        {/* <select onChange={handleChange} defaultValue="default">
-          <option disabled value="default">
-            -- Select Product Segment --
-          </option>
-          {segments.map((segment) => (
-            <option value={segment.id}>{segment.name}</option>
-          ))}
-        </select> */}
         <label>Category:</label>
         <select value={selectedSegment} onChange={handleSegmentChange}>
           <option disabled value="default">

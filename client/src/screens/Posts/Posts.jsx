@@ -20,7 +20,7 @@ export default function Posts(props) {
           </Link>
           <p>{post.user?.username}</p>
           <p>{post.description}</p>
-          <p>{post.segments[0].name}</p>
+          <p>{post?.segments[0]?.name}</p>
         </div>
       ))}
     </section>

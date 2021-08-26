@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Switch, Route, useHistory } from "react-router-dom";
 import { getAllPosts, postPost, putPost, deletePost } from "../services/posts";
-import { getAllSegments } from "../services/segments";
+import { getAllSegments, addSegmentToPost } from "../services/segments";
 import Posts from "../screens/Posts/Posts";
 import PostCreate from "../screens/PostCreate/PostCreate";
 import UserPosts from "../screens/UserPosts/UserPosts";
@@ -30,9 +30,10 @@ export default function MainContainer(props) {
     fetchSegments();
   }, []);
 
-  const handleCreate = async (formData) => {
+  const handleCreate = async (formData, segmentId) => {
     const postData = await postPost(formData);
     setPosts((prevState) => [...prevState, postData]);
+    handleSegmentAdd(segmentId, postData.id);
     history.push("/");
   };
 
@@ -49,6 +50,15 @@ export default function MainContainer(props) {
       })
     );
     history.push("/");
+  };
+
+  const handleSegmentAdd = async (segmentId, postId) => {
+    const updatePost = await addSegmentToPost(segmentId, postId);
+    setPosts((prevState) =>
+      prevState.map((post) => {
+        return post.postId === Number(postId) ? updatePost : post;
+      })
+    );
   };
 
   return (
