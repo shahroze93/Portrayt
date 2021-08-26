@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
   # POST /comments
   def create
     @comment = Comment.new(comment_params)
-
+    @comment.user = @current_user
     if @comment.save
       render json: @comment, status: :created, location: @comment
     else
@@ -36,6 +36,14 @@ class CommentsController < ApplicationController
   # DELETE /comments/1
   def destroy
     @comment.destroy
+  end
+
+  def add_to_post
+    @post = Post.find(params[:id])
+    @comment = Comment.find(params[:commentId])
+
+    @post.comments << @comment
+    render json: @post
   end
 
   private

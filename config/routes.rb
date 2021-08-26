@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :users
   put '/segments/:segmentId/posts/:id',
         to: 'segments#add_to_post'
+  put '/comments/:commentId/posts/:id',
+        to: 'comments#add_to_post'
 end
