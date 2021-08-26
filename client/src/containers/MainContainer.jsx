@@ -82,7 +82,7 @@ export default function MainContainer(props) {
           <Posts segments={segments} posts={posts} />
         </Route>
         <Route exact path="/segments/:id">
-          <SegmentPosts />
+          <SegmentPosts segments={segments} />
         </Route>
         <Route exact path="/users/:id">
           <OthersPosts />

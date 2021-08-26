@@ -6,6 +6,7 @@ import { getOneSegment } from "../../services/segments";
 export default function SegmentPosts(props) {
   const [segData, setSegData] = useState(null);
   const { id } = useParams();
+  const { segments } = props;
 
   useEffect(() => {
     const fetchSegment = async () => {
@@ -17,6 +18,17 @@ export default function SegmentPosts(props) {
 
   return (
     <section>
+      <hr />
+      <div>
+        {segments.map((segment) => (
+          <div key={segment.id}>
+            <Link to={`/segments/${segment.id}`}>
+              <h3>{segment.name}</h3>
+            </Link>
+          </div>
+        ))}
+      </div>
+      <hr />
       <h1>{segData?.name}</h1>
       {segData?.posts?.map((post) => (
         <div key={post.id}>

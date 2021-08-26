@@ -5,6 +5,7 @@ export default function Posts(props) {
 
   return (
     <section>
+      <hr />
       <div>
         {segments.map((segment) => (
           <div key={segment.id}>
@@ -14,6 +15,7 @@ export default function Posts(props) {
           </div>
         ))}
       </div>
+      <hr />
       {posts
         ?.sort(
           ({ id: previousID }, { id: currentID }) => previousID - currentID
