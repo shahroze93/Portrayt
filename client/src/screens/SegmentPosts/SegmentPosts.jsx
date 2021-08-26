@@ -1,12 +1,28 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router";
+import { getOneSegment } from "../../services/segments";
 
 export default function SegmentPosts(props) {
   const { segments } = props;
+  const [segData, setSegData] = useState(null);
+  const { id } = useParams();
+
+  useEffect(() => {
+    const fetchFoodItem = async () => {
+      const singleSegment = await getOneSegment(id);
+      setSegData(singleSegment);
+    };
+    fetchFoodItem();
+  }, [id]);
+
+  console.log(segData);
 
   return (
     <section>
-      <div></div>
-      {segments?.posts?.map((post) => (
+      <h1>HELOOOOOOOOOO</h1>
+      <div>{segData?.name}</div>
+      {segData?.posts?.map((post) => (
         <div key={post.id}>
           <Link to={`/posts/${post.id}`}>
             <h4>{post.name}</h4>

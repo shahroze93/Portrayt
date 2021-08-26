@@ -14,4 +14,3 @@ export const addSegmentToPost = async (segmentId, postId) => {
   const resp = await api.put(`/segments/${segmentId}/posts/${postId}`);
   return resp.data;
 };
-

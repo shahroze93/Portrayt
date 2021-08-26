@@ -70,12 +70,16 @@ export default function MainContainer(props) {
           <PostCreate segments={segments} handleCreate={handleCreate} />
         </Route>
         <Route path="/posts/:id/edit">
-          <PostEdit segments={segments} posts={posts} handleUpdate={handleUpdate} />
+          <PostEdit
+            segments={segments}
+            posts={posts}
+            handleUpdate={handleUpdate}
+          />
         </Route>
         <Route exact path="/">
           <Posts segments={segments} posts={posts} />
         </Route>
-        <Route exact path="/segments">
+        <Route exact path="/segments/:id">
           <SegmentPosts posts={posts} />
         </Route>
         <Route exact path="/myposts">
