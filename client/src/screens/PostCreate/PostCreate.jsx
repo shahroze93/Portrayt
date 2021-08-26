@@ -8,7 +8,8 @@ export default function PostCreate(props) {
     description: "",
   });
   const { name, img_url, link_url, description } = formData;
-  const { handleCreate } = props;
+  const { handleCreate, segments } = props;
+  const [selectedSegment, setSelectedSegment] = useState("default");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -16,6 +17,10 @@ export default function PostCreate(props) {
       ...prevState,
       [name]: value,
     }));
+  };
+
+  const handleSegmentChange = (event) => {
+    setSelectedSegment(event.target.value);
   };
 
   return (
@@ -31,7 +36,10 @@ export default function PostCreate(props) {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          handleCreate(formData);
+          const category = segments.find(
+            (segment) => segment.name === selectedSegment
+          );
+          handleCreate(formData, category.id);
         }}
       >
         <label>
@@ -73,6 +81,17 @@ export default function PostCreate(props) {
             <option value={segment.id}>{segment.name}</option>
           ))}
         </select> */}
+        <label>Category:</label>
+        <select value={selectedSegment} onChange={handleSegmentChange}>
+          <option disabled value="default">
+            All Categories
+          </option>
+          {segments?.map((segment) => (
+            <option value={segment.name} key={segment.id}>
+              {segment.name}
+            </option>
+          ))}
+        </select>
         <button>Submit</button>
       </form>
     </section>

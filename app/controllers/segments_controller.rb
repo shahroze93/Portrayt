@@ -5,12 +5,12 @@ class SegmentsController < ApplicationController
   def index
     @segments = Segment.all
 
-    render json: @segments
+    render json: @segments, include: [:posts]
   end
 
   # GET /segments/1
   def show
-    render json: @segment
+    render json: @segment, include: [:post]
   end
 
   # POST /segments

@@ -6,12 +6,12 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
 
-    render json: @posts, include: :user
+    render json: @posts, include: [:user, :segments]
   end
 
   # GET /posts/1
   def show
-    render json: @post, include: :segments
+    render json: @post, include: [:user, :segments, :comments]
   end
 
   # POST /posts

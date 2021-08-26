@@ -1,11 +1,12 @@
-import { useState, useEffect } from 'react';
-import { Switch, Route, useHistory } from 'react-router-dom';
-import { getAllPosts, postPost, putPost, deletePost } from '../services/posts';
-import { getAllSegments } from '../services/segments';
-import Posts from '../screens/Posts/Posts';
-import PostCreate from '../screens/PostCreate/PostCreate';
-import UserPosts from '../screens/UserPosts/UserPosts';
-import PostEdit from '../screens/PostEdit/PostEdit';
+import { useState, useEffect } from "react";
+import { Switch, Route, useHistory } from "react-router-dom";
+import { getAllPosts, postPost, putPost, deletePost } from "../services/posts";
+import { getAllSegments } from "../services/segments";
+import Posts from "../screens/Posts/Posts";
+import PostCreate from "../screens/PostCreate/PostCreate";
+import UserPosts from "../screens/UserPosts/UserPosts";
+import PostEdit from "../screens/PostEdit/PostEdit";
+import SegmentPosts from "../screens/SegmentPosts/SegmentPosts";
 
 export default function MainContainer(props) {
   const [posts, setPosts] = useState([]);
@@ -20,7 +21,7 @@ export default function MainContainer(props) {
     };
     fetchPosts();
   }, []);
-  
+
   useEffect(() => {
     const fetchSegments = async () => {
       const segmentList = await getAllSegments();
@@ -32,7 +33,7 @@ export default function MainContainer(props) {
   const handleCreate = async (formData) => {
     const postData = await postPost(formData);
     setPosts((prevState) => [...prevState, postData]);
-    history.push('/');
+    history.push("/");
   };
 
   const handleDelete = async (id) => {
@@ -47,25 +48,30 @@ export default function MainContainer(props) {
         return post.id === Number(id) ? postData : post;
       })
     );
-    history.push('/');
+    history.push("/");
   };
 
   return (
     <div>
       <Switch>
-        <Route path='/posts/new'>
-          <PostCreate handleCreate={handleCreate} />
+        <Route path="/posts/new">
+          <PostCreate segments={segments} handleCreate={handleCreate} />
         </Route>
-        <Route path='/posts/:id/edit'>
+        <Route path="/posts/:id/edit">
           <PostEdit posts={posts} handleUpdate={handleUpdate} />
         </Route>
-        <Route exact path='/'>
+        <Route exact path="/">
           <Posts segments={segments} posts={posts} />
         </Route>
-        <Route exact path='/myposts'>
-          <UserPosts posts={posts}
-          handleDelete={handleDelete}
-          currentUser={currentUser}/>
+        <Route exact path="/segments">
+          <SegmentPosts posts={posts} />
+        </Route>
+        <Route exact path="/myposts">
+          <UserPosts
+            posts={posts}
+            handleDelete={handleDelete}
+            currentUser={currentUser}
+          />
         </Route>
       </Switch>
     </div>

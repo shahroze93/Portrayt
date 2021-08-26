@@ -1,18 +1,12 @@
 import { Link } from "react-router-dom";
 
-export default function Posts(props) {
-  const { posts, segments } = props;
-
-  console.log(posts);
+export default function SegmentPosts(props) {
+  const { segments } = props;
 
   return (
     <section>
-      <div>
-        {segments.map((segment) => (
-          <h3 key={segment.id}>{segment.name}</h3>
-        ))}
-      </div>
-      {posts.map((post) => (
+      <div></div>
+      {segments?.posts?.map((post) => (
         <div key={post.id}>
           <Link to={`/posts/${post.id}`}>
             <h4>{post.name}</h4>
@@ -20,7 +14,7 @@ export default function Posts(props) {
           </Link>
           <p>{post.user?.username}</p>
           <p>{post.description}</p>
-          <p>{post.segments[0].name}</p>
+          <p>{post?.segments?.name}</p>
         </div>
       ))}
     </section>
