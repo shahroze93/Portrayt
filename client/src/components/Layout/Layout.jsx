@@ -8,7 +8,7 @@ export default function Layout(props) {
       <Link to='/'><h1>PORTRAYT</h1></Link>
       {currentUser ? (
         <div>
-          <p>{currentUser.username}</p>
+          <Link to={`/edit-account`}><p>{currentUser.username}</p></Link>
         </div>
       ) : (
           <div>
