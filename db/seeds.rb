@@ -120,6 +120,11 @@ post20 = Post.create!(name: "Cute Fox Planters",
             link_url: "",
             description: "woodland animal plastic bottle planters",
             user: @tester)
+post20 = Post.create!(name: "Rustic Bath", 
+            img_url: "https://i.pinimg.com/564x/72/0f/30/720f30c50a093711c4f3a78c0c657e98.jpg",
+            link_url: "",
+            description: "my latest renovation",
+            user: @test5)
 
 puts "#{Post.count} posts created"
 
@@ -149,6 +154,7 @@ post17.segments << segment3
 post18.segments << segment3
 post19.segments << segment3
 post20.segments << segment3
+post21.segments << segment1
 
 comment1 = Comment.create!(content: 'Cool', user: @test5)
 comment2 = Comment.create!(content: 'Pretty', user: @test5)

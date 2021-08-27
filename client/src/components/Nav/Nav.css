@@ -1,0 +1,46 @@
+.navbarContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* position: fixed; */
+  width: 100%;
+  /* height: 70px; */
+  top: 0rem;
+  /* z-index: 100; */
+}
+
+.logoNuser {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+.logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  list-style: none;
+  font-size: 2rem;
+  padding-left: 4vw;
+}
+
+.authorizedNav {
+  width: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 4vw;
+}
+
+.loginNsignup {
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 6vw;
+}
