@@ -1,12 +1,14 @@
 import React from "react";
 import { useState } from "react";
 
-export default function CommentEdit() {
+export default function CommentEdit(props) {
   const { handleCommCreate, postData, currentUser } = props;
   const [formData, setFormData] = useState({
-    content: postData.id,
+    content: postData?.id,
   });
   const { content } = formData;
+
+  console.log(postData);
 
   // useEffect(() => {
   //   const fetchComment = () => {

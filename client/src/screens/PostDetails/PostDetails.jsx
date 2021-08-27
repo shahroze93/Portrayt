@@ -3,11 +3,18 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { getOnePost } from "../../services/posts";
 import CommentCreate from "../CommentCreate/CommentCreate";
+import CommentEdit from "../CommentEdit.jsx/CommentEdit";
 
 export default function PostDetails(props) {
   const [postData, setPostData] = useState(null);
   const { id } = useParams();
-  const { handleCommCreate, handleCommDelete, currentUser, toggle } = props;
+  const {
+    handleCommCreate,
+    handleCommDelete,
+    currentUser,
+    toggle,
+    handleCommEdit,
+  } = props;
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -32,6 +39,11 @@ export default function PostDetails(props) {
         handleCommCreate={handleCommCreate}
         postData={postData}
       />
+      <CommentEdit
+        currentUser={currentUser}
+        handleCommCreate={handleCommCreate}
+        postData={postData}
+      />
       {postData?.comments
         ?.sort(
           ({ id: previousID }, { id: currentID }) => previousID - currentID
@@ -44,8 +56,10 @@ export default function PostDetails(props) {
             <p>{comment?.user?.username}</p>
             {currentUser?.id === comment.user_id && (
               <div>
-              <button onClick={() => handleEdit(comment.id)}>EDIT</button>
-              <button onClick={() => handleCommDelete(comment.id)}>Delete</button>
+                <button onClick={() => handleCommEdit(comment.id)}>EDIT</button>
+                <button onClick={() => handleCommDelete(comment.id)}>
+                  Delete
+                </button>
               </div>
             )}
           </div>

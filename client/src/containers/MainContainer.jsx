@@ -64,6 +64,10 @@ export default function MainContainer(props) {
     history.push("/");
   };
 
+  const handleCommEdit = async (id, formData) => {
+    console.log("test");
+  };
+
   const handleSegmentAdd = async (segmentId, postId) => {
     const updatePost = await addSegmentToPost(segmentId, postId);
     setPosts((prevState) =>
@@ -114,6 +118,7 @@ export default function MainContainer(props) {
             handleCommCreate={handleCommCreate}
             currentUser={currentUser}
             toggle={toggle}
+            handleCommEdit={handleCommEdit}
           />
         </Route>
         <Route exact path="/myposts">
