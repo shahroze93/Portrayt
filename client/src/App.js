@@ -67,7 +67,7 @@ function App() {
             <SignUp handleSignUp={handleSignUp} />
           </Route>
           <Route path='/edit-account'>
-            <EditAccount userDelete={userDelete} />
+            <EditAccount currentUser={currentUser} userDelete={userDelete} />
           </Route>
           <Route path='/'>
             <MainContainer currentUser={currentUser} />

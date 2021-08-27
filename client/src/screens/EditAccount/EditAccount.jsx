@@ -1,48 +1,67 @@
-import React from 'react'
-import { useState } from 'react';
+import React from "react";
+import { useState, useEffect } from "react";
 
 export default function EditAccount(props) {
   const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    password: '',
+    username: "",
+    email: "",
+    password: "",
   });
-  const { userDelete } = props;
+  const { userDelete, currentUser } = props;
+
+  useEffect(() => {
+    const fetchUser = () => {
+      setFormData(currentUser);
+    };
+    if (currentUser) {
+      fetchUser();
+    }
+  }, [currentUser]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  };
+
+  console.log(formData);
 
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-      }}
-    >
+    <form onSubmit={handleSubmit}>
       <h3>Edit Account</h3>
       <label>
         Username:
         <input
-          type='text'
-          name='username'
+          type="text"
+          name="username"
           value={formData.username}
-          // onChange={handleChange}
+          onChange={handleChange}
         />
       </label>
       <br />
       <label>
         Email:
         <input
-          type='text'
-          name='email'
+          type="text"
+          name="email"
           value={formData.email}
-          // onChange={handleChange}
+          onChange={handleChange}
         />
       </label>
       <br />
       <label>
         Password:
         <input
-          type='password'
-          name='password'
+          type="password"
+          name="password"
           value={formData.password}
-          // onChange={handleChange}
+          onChange={handleChange}
         />
       </label>
       <br />

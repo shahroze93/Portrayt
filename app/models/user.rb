@@ -6,5 +6,12 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
-  validates :password, length: { minimum: 6 }
+  validates :password, :presence => true,
+  :confirmation => true,
+  :length => {:within => 6..40},
+  :on => :create
+  validates :password, :confirmation => true,
+  :length => {:within => 6..40},
+  :allow_blank => true,
+  :on => :update
 end
