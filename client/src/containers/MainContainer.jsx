@@ -99,7 +99,7 @@ export default function MainContainer(props) {
     let value = event.target.value;
     let result = [];
     result = posts.filter((post) => {
-      return post.name.search(value) != -1;
+      return post.name.search(value) !== -1;
     });
     setFilteredData(result);
   };

@@ -12,9 +12,21 @@ export default function SegmentPosts(props) {
     const fetchSegment = async () => {
       const singleSegment = await getOneSegment(id);
       setSegData(singleSegment);
+      setFilteredData(singleSegment.posts);
     };
     fetchSegment();
   }, [id]);
+
+  const [filteredData, setFilteredData] = useState(segData);
+
+  const handleSearch = (event) => {
+    let value = event.target.value;
+    let result = [];
+    result = segData.posts.filter((post) => {
+      return post.name.search(value) !== -1;
+    });
+    setFilteredData(result);
+  };
 
   return (
     <section>
@@ -30,7 +42,13 @@ export default function SegmentPosts(props) {
       </div>
       <hr />
       <h1>{segData?.name}</h1>
-      {segData?.posts?.map((post) => (
+      <input
+        type="text"
+        className="searchBar"
+        onChange={(event) => handleSearch(event)}
+        placeholder="SEARCH"
+      />
+      {filteredData?.map((post) => (
         <div key={post.id}>
           <Link to={`/posts/${post.id}`}>
             <h4>{post.name}</h4>
