@@ -87,8 +87,8 @@ export default function MainContainer(props) {
     setToggle((prevToggle) => !prevToggle);
   };
 
-  const handleCommEdit = async (commentData, postId) => {
-    await updateComment(commentData);
+  const handleCommEdit = async (commentId, formData) => {
+    await updateComment(commentId, formData);
   };
 
   return (

@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 export default function CommentEdit(props) {
-  const { handleCommEdit, postData, currentUser, comment } = props;
+  const { handleCommEdit, currentUser, comment } = props;
   const [formData, setFormData] = useState({
     content: "",
   });

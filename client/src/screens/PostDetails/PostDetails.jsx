@@ -43,7 +43,6 @@ export default function PostDetails(props) {
       <CommentEdit
         currentUser={currentUser}
         handleCommEdit={handleCommEdit}
-        postData={postData}
         comment={comment}
       />
       {postData?.comments
