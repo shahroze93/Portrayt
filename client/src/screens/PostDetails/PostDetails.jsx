@@ -25,6 +25,12 @@ export default function PostDetails() {
       <img src={postData?.img_url} alt={postData?.name} />
       <p>{postData?.description}</p>
       <p>{postData?.link_url}</p>
+      {postData?.comments?.map((comment) => (
+        <div key={comment.id}>
+          <p>{comment.content}</p>
+          <p>{comment?.user?.username}</p>
+        </div>
+      ))}
     </section>
   );
 }

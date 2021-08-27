@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1
   def show
-    render json: @post, include: [:user, :segments, :comments],  status: :ok
+    render json: @post, include: [:user, :segments, :comments => {:include => :user}],  status: :ok
   end
 
   # POST /posts
