@@ -1,12 +1,12 @@
 import React from "react";
 import { useState } from "react";
-import { postComment } from "../../services/comments";
 
 export default function CommentCreate(props) {
   const [formData, setFormData] = useState({
     content: "",
   });
-  const { handleCommCreate } = props;
+  const { content } = formData;
+  const { handleCommCreate, postData } = props;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -14,11 +14,12 @@ export default function CommentCreate(props) {
       ...prevState,
       [name]: value,
     }));
+    console.log(formData.content);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    handleCommCreate(formData);
+    handleCommCreate(formData, postData.id);
   };
   return (
     <div>
@@ -27,7 +28,7 @@ export default function CommentCreate(props) {
         <div>{props?.user?.username}</div>
         <input
           type="text"
-          value={formData.content}
+          value={content}
           name="content"
           placeholder="enter a public comment"
           onChange={handleChange}

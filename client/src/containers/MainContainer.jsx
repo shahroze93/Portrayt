@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Switch, Route, useHistory } from "react-router-dom";
 import { getAllPosts, postPost, putPost, deletePost } from "../services/posts";
 import { getAllSegments, addSegmentToPost } from "../services/segments";
+import { addCommentToPost, postComment } from "../services/comments";
 import Posts from "../screens/Posts/Posts";
 import PostCreate from "../screens/PostCreate/PostCreate";
 import UserPosts from "../screens/UserPosts/UserPosts";
@@ -65,6 +66,20 @@ export default function MainContainer(props) {
     history.push("/");
   };
 
+  const handleCommCreate = async (commentData, postId) => {
+    console.log(commentData);
+    const newComment = await postComment(commentData);
+    console.log(newComment)
+    const updatePost = await addCommentToPost(newComment.id, postId);
+    setPosts((prevState) =>
+      prevState.map((post) => {
+        return post.postId === Number(postId) ? updatePost : post;
+      })
+    );
+    setToggle((prevToggle) => !prevToggle);
+    // history.push("/");
+  };
+
   return (
     <div>
       <Switch>
@@ -88,7 +103,7 @@ export default function MainContainer(props) {
           <OthersPosts />
         </Route>
         <Route exact path="/posts/:id">
-          <PostDetails />
+          <PostDetails handleCommCreate={handleCommCreate} />
         </Route>
         <Route exact path="/myposts">
           <UserPosts

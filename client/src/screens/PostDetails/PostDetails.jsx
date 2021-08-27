@@ -4,9 +4,10 @@ import { useParams } from "react-router";
 import { getOnePost } from "../../services/posts";
 import CommentCreate from "../CommentCreate/CommentCreate";
 
-export default function PostDetails() {
+export default function PostDetails(props) {
   const [postData, setPostData] = useState(null);
   const { id } = useParams();
+  const { handleCommCreate } = props;
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -26,7 +27,7 @@ export default function PostDetails() {
       <img src={postData?.img_url} alt={postData?.name} />
       <p>{postData?.description}</p>
       <p>{postData?.link_url}</p>
-      <CommentCreate />
+      <CommentCreate handleCommCreate={handleCommCreate} postData={postData} />
       {postData?.comments?.map((comment) => (
         <div key={comment.id}>
           <p>{comment.content}</p>
