@@ -7,6 +7,7 @@ import CommentEdit from "../CommentEdit.jsx/CommentEdit";
 
 export default function PostDetails(props) {
   const [postData, setPostData] = useState(null);
+  const [comment, setComment] = useState(null);
   const { id } = useParams();
   const {
     handleCommCreate,
@@ -41,8 +42,9 @@ export default function PostDetails(props) {
       />
       <CommentEdit
         currentUser={currentUser}
-        handleCommCreate={handleCommCreate}
+        handleCommEdit={handleCommEdit}
         postData={postData}
+        comment={comment}
       />
       {postData?.comments
         ?.sort(
@@ -56,7 +58,7 @@ export default function PostDetails(props) {
             <p>{comment?.user?.username}</p>
             {currentUser?.id === comment.user_id && (
               <div>
-                <button onClick={() => handleCommEdit(comment.id)}>EDIT</button>
+                <button onClick={() => setComment(comment)}>EDIT</button>
                 <button onClick={() => handleCommDelete(comment.id)}>
                   Delete
                 </button>

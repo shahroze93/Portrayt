@@ -1,26 +1,22 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function CommentEdit(props) {
-  const { handleCommCreate, postData, currentUser } = props;
+  const { handleCommCreate, postData, currentUser, comment } = props;
   const [formData, setFormData] = useState({
-    content: postData?.id,
+    content: "",
   });
-  const { content } = formData;
 
-  console.log(postData);
+  useEffect(() => {
+    const fetchComment = () => {
+      setFormData(comment);
+    };
+    if (comment) {
+      fetchComment();
+    } 
+  }, [comment]);
 
-  // useEffect(() => {
-  //   const fetchComment = () => {
-  //     const findComment = comments.find((comment) => comment.id === Number(id));
-  //     setFormData({
-  //       content: findComment.content,
-  //     });
-  //   };
-  //   if (comments.length) {
-  //     fetchComment();
-  //   }
-  // }, [comments, id]);
+  console.log(formData);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -42,7 +38,7 @@ export default function CommentEdit(props) {
         <div>{currentUser?.username}</div>
         <input
           type="text"
-          value={content}
+          value={formData?.content}
           name="content"
           placeholder="enter a public comment"
           onChange={handleChange}
