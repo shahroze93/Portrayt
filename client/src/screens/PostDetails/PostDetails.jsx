@@ -27,7 +27,11 @@ export default function PostDetails(props) {
       <img src={postData?.img_url} alt={postData?.name} />
       <p>{postData?.description}</p>
       <p>{postData?.link_url}</p>
-      <CommentCreate handleCommCreate={handleCommCreate} postData={postData} />
+      <CommentCreate
+        currentUser={currentUser}
+        handleCommCreate={handleCommCreate}
+        postData={postData}
+      />
       {postData?.comments
         ?.sort(
           ({ id: previousID }, { id: currentID }) => previousID - currentID
@@ -39,9 +43,10 @@ export default function PostDetails(props) {
             <p>{comment.content}</p>
             <p>{comment?.user?.username}</p>
             {currentUser?.id === comment.user_id && (
-              <button onClick={() => handleCommDelete(comment.id)}>
-                Delete
-              </button>
+              <div>
+              <button onClick={() => handleEdit(comment.id)}>EDIT</button>
+              <button onClick={() => handleCommDelete(comment.id)}>Delete</button>
+              </div>
             )}
           </div>
         ))}

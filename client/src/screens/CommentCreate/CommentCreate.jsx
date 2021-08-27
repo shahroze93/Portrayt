@@ -6,7 +6,7 @@ export default function CommentCreate(props) {
     content: "",
   });
   const { content } = formData;
-  const { handleCommCreate, postData } = props;
+  const { handleCommCreate, postData, currentUser } = props;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -14,18 +14,18 @@ export default function CommentCreate(props) {
       ...prevState,
       [name]: value,
     }));
-    console.log(formData.content);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     handleCommCreate(formData, postData.id);
   };
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <div>Add Comment</div>
-        <div>{props?.user?.username}</div>
+        <div>{currentUser?.username}</div>
         <input
           type="text"
           value={content}
