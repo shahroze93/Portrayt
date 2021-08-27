@@ -73,6 +73,17 @@ export default function PostEdit(props) {
             onChange={handleChange}
           />
         </label>
+        <label>Category:</label>
+        <select value={selectedSegment} onChange={handleSegmentChange}>
+          <option disabled value="default">
+            All Categories
+          </option>
+          {segments?.map((segment) => (
+            <option value={segment.name} key={segment.id}>
+              {segment.name}
+            </option>
+          ))}
+        </select>
         <label>
           Image URL:
           <input
@@ -100,17 +111,6 @@ export default function PostEdit(props) {
             onChange={handleChange}
           />
         </label>
-        <label>Category:</label>
-        <select value={selectedSegment} onChange={handleSegmentChange}>
-          <option disabled value="default">
-            All Categories
-          </option>
-          {segments?.map((segment) => (
-            <option value={segment.name} key={segment.id}>
-              {segment.name}
-            </option>
-          ))}
-        </select>
         <button>Submit</button>
       </form>
     </section>

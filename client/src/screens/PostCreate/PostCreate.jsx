@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./PostCreate.css";
 
 export default function PostCreate(props) {
   const [formData, setFormData] = useState({
@@ -53,33 +54,7 @@ export default function PostCreate(props) {
           Name:
           <input type="text" name="name" value={name} onChange={handleChange} />
         </label>
-        <label>
-          Image URL:
-          <input
-            type="text"
-            name="img_url"
-            value={img_url}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Link URL to Website (optional):
-          <input
-            type="text"
-            name="link_url"
-            value={link_url}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Description:
-          <input
-            type="text"
-            name="description"
-            value={description}
-            onChange={handleChange}
-          />
-        </label>
+        <br />
         <label>Category:</label>
         <select value={selectedSegment} onChange={handleSegmentChange}>
           <option disabled value="default">
@@ -91,6 +66,37 @@ export default function PostCreate(props) {
             </option>
           ))}
         </select>
+        <br />
+        <label>
+          Image URL:
+          <input
+            type="text"
+            name="img_url"
+            value={img_url}
+            onChange={handleChange}
+          />
+        </label>
+        <br />
+        <label>
+          Link URL to Website (optional):
+          <input
+            type="text"
+            name="link_url"
+            value={link_url}
+            onChange={handleChange}
+          />
+        </label>
+        <br />
+        <label>
+          Description:
+          <input
+            type="text"
+            name="description"
+            value={description}
+            onChange={handleChange}
+          />
+        </label>
+        <br />
         <button>Submit</button>
       </form>
     </section>
