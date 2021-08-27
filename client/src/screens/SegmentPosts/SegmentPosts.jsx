@@ -31,7 +31,7 @@ export default function SegmentPosts(props) {
   return (
     <section>
       <hr />
-      <div>
+      <div className="categoryBanner">
         {segments.map((segment) => (
           <div key={segment.id}>
             <Link to={`/segments/${segment.id}`}>

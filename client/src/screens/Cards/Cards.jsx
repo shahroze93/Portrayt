@@ -1,5 +1,5 @@
 import React from "react";
-import './Cards.css';
+import "./Cards.css";
 import { Link } from "react-router-dom";
 
 function Cards(props) {
@@ -9,15 +9,17 @@ function Cards(props) {
     <div className="cardContainer">
       <div className="cardInfo">
         <Link to={`/posts/${post.id}`}>
-          <h4>{post.name}</h4>
           <img className="cardImage" src={post.img_url} alt={post.name} />
+          <div className="cardName">{post.name}</div>
         </Link>
         <Link to={`/users/${post.user?.id}`}>
-          <h4>{post.user?.username}</h4>
+          <div className="cardUser">{post.user?.username}</div>
         </Link>
-        <p>{post.description}</p>
+        <div className="cardDesc">{post.description}</div>
         {post?.segments?.map((segment) => (
-          <p key={segment.id}>{segment.name}</p>
+          <div className="cardCategory" key={segment.id}>
+            <Link to={`/segments/${segment.id}`}>{segment.name}</Link>
+          </div>
         ))}
       </div>
     </div>
