@@ -1,5 +1,5 @@
 .masonGridContainer {
-  padding-left: 3vw;
+  padding-left: 2vw;
 }
 
 .my-masonry-grid {
@@ -10,4 +10,10 @@
 }
 .my-masonry-grid_column {
   background-clip: padding-box;
+}
+
+.categoryBanner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }

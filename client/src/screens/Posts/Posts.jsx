@@ -9,7 +9,8 @@ export default function Posts(props) {
   const breakpoints = {
     default: 5,
     1500: 5,
-    1100: 3,
+    1200: 4,
+    1000: 3,
     800: 2,
     550: 1,
   };

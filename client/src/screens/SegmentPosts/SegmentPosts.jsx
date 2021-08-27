@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { getOneSegment } from "../../services/segments";
+import Masonry from "react-masonry-css";
+import Cards from "../Cards/Cards";
 
 export default function SegmentPosts(props) {
   const [segData, setSegData] = useState(null);
@@ -28,10 +30,22 @@ export default function SegmentPosts(props) {
     setFilteredData(result);
   };
 
+  const breakpoints = {
+    default: 5,
+    1500: 5,
+    1200: 4,
+    1000: 3,
+    800: 2,
+    550: 1,
+  };
+
   return (
     <section>
       <hr />
       <div className="categoryBanner">
+        <Link to={`/`}>
+          <h3>Discover</h3>
+        </Link>
         {segments.map((segment) => (
           <div key={segment.id}>
             <Link to={`/segments/${segment.id}`}>
@@ -48,17 +62,25 @@ export default function SegmentPosts(props) {
         onChange={(event) => handleSearch(event)}
         placeholder="SEARCH"
       />
-      {filteredData?.map((post) => (
-        <div key={post.id}>
-          <Link to={`/posts/${post.id}`}>
-            <h4>{post.name}</h4>
-            <img src={post.img_url} alt={post.name} />
-          </Link>
-          <p>{post.user?.username}</p>
-          <p>{post.description}</p>
-          <p>{post?.segments?.name}</p>
-        </div>
-      ))}
+      <section className="masonGridContainer">
+        <Masonry
+          breakpointCols={breakpoints}
+          className="my-masonry-grid"
+          columnClassName="my-masonry-grid_column"
+        >
+          {filteredData
+            ?.sort(
+              ({ id: previousID }, { id: currentID }) => previousID - currentID
+            )
+            .slice(0)
+            .reverse()
+            .map((post) => (
+              <div className="productList" key={post.id}>
+                <Cards post={post} />
+              </div>
+            ))}
+        </Masonry>
+      </section>
     </section>
   );
 }
