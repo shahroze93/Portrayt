@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 export default function Posts(props) {
-  const { posts, segments } = props;
+  const { filteredData, segments, handleSearch } = props;
 
   return (
     <section>
@@ -16,7 +16,13 @@ export default function Posts(props) {
         ))}
       </div>
       <hr />
-      {posts
+      <input
+        type="text"
+        className="searchBar"
+        onChange={(event) => handleSearch(event)}
+        placeholder="SEARCH"
+      />
+      {filteredData
         ?.sort(
           ({ id: previousID }, { id: currentID }) => previousID - currentID
         )

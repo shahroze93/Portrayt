@@ -27,6 +27,7 @@ export default function MainContainer(props) {
     const fetchPosts = async () => {
       const postList = await getAllPosts();
       setPosts(postList);
+      setFilteredData(postList);
     };
     fetchPosts();
   }, [toggle]);
@@ -92,6 +93,19 @@ export default function MainContainer(props) {
     setToggle((prevToggle) => !prevToggle);
   };
 
+  const [filteredData, setFilteredData] = useState(posts);
+
+  const handleSearch = (event) => {
+    let value = event.target.value;
+    let result = [];
+    result = posts.filter((post) => {
+      return post.name.search(value) != -1;
+    });
+    setFilteredData(result);
+  };
+
+  console.log(filteredData);
+
   return (
     <div>
       <Switch>
@@ -106,7 +120,11 @@ export default function MainContainer(props) {
           />
         </Route>
         <Route exact path="/">
-          <Posts segments={segments} posts={posts} />
+          <Posts
+            segments={segments}
+            filteredData={filteredData}
+            handleSearch={handleSearch}
+          />
         </Route>
         <Route exact path="/segments/:id">
           <SegmentPosts segments={segments} />
