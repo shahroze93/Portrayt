@@ -6,6 +6,7 @@ import {
   addCommentToPost,
   postComment,
   deleteComment,
+  updateComment,
 } from "../services/comments";
 import Posts from "../screens/Posts/Posts";
 import PostCreate from "../screens/PostCreate/PostCreate";
@@ -64,10 +65,6 @@ export default function MainContainer(props) {
     history.push("/");
   };
 
-  const handleCommEdit = async (id, formData) => {
-    console.log("test");
-  };
-
   const handleSegmentAdd = async (segmentId, postId) => {
     const updatePost = await addSegmentToPost(segmentId, postId);
     setPosts((prevState) =>
@@ -88,6 +85,10 @@ export default function MainContainer(props) {
       })
     );
     setToggle((prevToggle) => !prevToggle);
+  };
+
+  const handleCommEdit = async (commentData, postId) => {
+    await updateComment(commentData);
   };
 
   return (

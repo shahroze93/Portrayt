@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 export default function CommentEdit(props) {
-  const { handleCommCreate, postData, currentUser, comment } = props;
+  const { handleCommEdit, postData, currentUser, comment } = props;
   const [formData, setFormData] = useState({
     content: "",
   });
@@ -13,7 +13,7 @@ export default function CommentEdit(props) {
     };
     if (comment) {
       fetchComment();
-    } 
+    }
   }, [comment]);
 
   console.log(formData);
@@ -28,7 +28,7 @@ export default function CommentEdit(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    handleCommCreate(formData, postData.id);
+    handleCommEdit(comment.id, formData);
   };
 
   return (
