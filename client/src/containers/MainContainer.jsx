@@ -104,6 +104,15 @@ export default function MainContainer(props) {
     setFilteredData(result);
   };
 
+  const breakpoints = {
+    default: 6,
+    1600: 5,
+    1300: 4,
+    1000: 3,
+    800: 2,
+    550: 1,
+  };
+
   return (
     <div>
       <Switch>
@@ -122,10 +131,11 @@ export default function MainContainer(props) {
             segments={segments}
             filteredData={filteredData}
             handleSearch={handleSearch}
+            breakpoints={breakpoints}
           />
         </Route>
         <Route exact path="/segments/:id">
-          <SegmentPosts segments={segments} />
+          <SegmentPosts breakpoints={breakpoints} segments={segments} />
         </Route>
         <Route exact path="/users/:id">
           <OthersPosts />

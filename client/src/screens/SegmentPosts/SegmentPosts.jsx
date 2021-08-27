@@ -8,7 +8,7 @@ import Cards from "../Cards/Cards";
 export default function SegmentPosts(props) {
   const [segData, setSegData] = useState(null);
   const { id } = useParams();
-  const { segments } = props;
+  const { segments, breakpoints } = props;
 
   useEffect(() => {
     const fetchSegment = async () => {
@@ -28,15 +28,6 @@ export default function SegmentPosts(props) {
       return post.name.toLowerCase().search(value) !== -1;
     });
     setFilteredData(result);
-  };
-
-  const breakpoints = {
-    default: 5,
-    1500: 5,
-    1200: 4,
-    1000: 3,
-    800: 2,
-    550: 1,
   };
 
   return (

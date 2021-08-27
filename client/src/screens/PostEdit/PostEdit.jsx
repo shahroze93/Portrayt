@@ -73,6 +73,7 @@ export default function PostEdit(props) {
             onChange={handleChange}
           />
         </label>
+        <br />
         <label>Category:</label>
         <select value={selectedSegment} onChange={handleSegmentChange}>
           <option disabled value="default">
@@ -84,6 +85,7 @@ export default function PostEdit(props) {
             </option>
           ))}
         </select>
+        <br />
         <label>
           Image URL:
           <input
@@ -93,6 +95,7 @@ export default function PostEdit(props) {
             onChange={handleChange}
           />
         </label>
+        <br />
         <label>
           Link URL to Website (optional):
           <input
@@ -102,6 +105,7 @@ export default function PostEdit(props) {
             onChange={handleChange}
           />
         </label>
+        <br />
         <label>
           Description:
           <input
@@ -111,6 +115,7 @@ export default function PostEdit(props) {
             onChange={handleChange}
           />
         </label>
+        <br />
         <button>Submit</button>
       </form>
     </section>
