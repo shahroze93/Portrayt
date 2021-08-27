@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { getOnePost } from "../../services/posts";
+import CommentCreate from "../CommentCreate/CommentCreate";
 
 export default function PostDetails() {
   const [postData, setPostData] = useState(null);
@@ -25,6 +26,7 @@ export default function PostDetails() {
       <img src={postData?.img_url} alt={postData?.name} />
       <p>{postData?.description}</p>
       <p>{postData?.link_url}</p>
+      <CommentCreate />
       {postData?.comments?.map((comment) => (
         <div key={comment.id}>
           <p>{comment.content}</p>
