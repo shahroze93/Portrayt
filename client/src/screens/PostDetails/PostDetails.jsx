@@ -7,7 +7,7 @@ import CommentCreate from "../CommentCreate/CommentCreate";
 export default function PostDetails(props) {
   const [postData, setPostData] = useState(null);
   const { id } = useParams();
-  const { handleCommCreate, handleCommDelete, currentUser } = props;
+  const { handleCommCreate, handleCommDelete, currentUser, toggle } = props;
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -15,7 +15,7 @@ export default function PostDetails(props) {
       setPostData(singlePost);
     };
     fetchPost();
-  }, [id]);
+  }, [id, toggle]);
 
   return (
     <section>
@@ -28,15 +28,23 @@ export default function PostDetails(props) {
       <p>{postData?.description}</p>
       <p>{postData?.link_url}</p>
       <CommentCreate handleCommCreate={handleCommCreate} postData={postData} />
-      {postData?.comments?.map((comment) => (
-        <div key={comment.id}>
-          <p>{comment.content}</p>
-          <p>{comment?.user?.username}</p>
-          {currentUser?.id === comment.user_id && (
-            <button onClick={() => handleCommDelete(comment.id)}>Delete</button>
-          )}
-        </div>
-      ))}
+      {postData?.comments
+        ?.sort(
+          ({ id: previousID }, { id: currentID }) => previousID - currentID
+        )
+        .slice(0)
+        .reverse()
+        .map((comment) => (
+          <div key={comment.id}>
+            <p>{comment.content}</p>
+            <p>{comment?.user?.username}</p>
+            {currentUser?.id === comment.user_id && (
+              <button onClick={() => handleCommDelete(comment.id)}>
+                Delete
+              </button>
+            )}
+          </div>
+        ))}
     </section>
   );
 }

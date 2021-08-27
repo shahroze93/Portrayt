@@ -51,7 +51,7 @@ export default function MainContainer(props) {
 
   const handleCommDelete = async (id) => {
     await deleteComment(id);
-    setPosts((prevState) => prevState.filter((post) => post.id !== id));
+    setToggle((prevToggle) => !prevToggle);
   };
 
   const handleUpdate = async (id, formData) => {
@@ -76,9 +76,7 @@ export default function MainContainer(props) {
   };
 
   const handleCommCreate = async (commentData, postId) => {
-    console.log(commentData);
     const newComment = await postComment(commentData);
-    console.log(newComment);
     const updatePost = await addCommentToPost(newComment.id, postId);
     setPosts((prevState) =>
       prevState.map((post) => {
@@ -86,7 +84,6 @@ export default function MainContainer(props) {
       })
     );
     setToggle((prevToggle) => !prevToggle);
-    // history.push("/");
   };
 
   return (
@@ -116,6 +113,7 @@ export default function MainContainer(props) {
             handleCommDelete={handleCommDelete}
             handleCommCreate={handleCommCreate}
             currentUser={currentUser}
+            toggle={toggle}
           />
         </Route>
         <Route exact path="/myposts">
