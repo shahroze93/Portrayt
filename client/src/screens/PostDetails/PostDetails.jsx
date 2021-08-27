@@ -7,7 +7,7 @@ import CommentCreate from "../CommentCreate/CommentCreate";
 export default function PostDetails(props) {
   const [postData, setPostData] = useState(null);
   const { id } = useParams();
-  const { handleCommCreate } = props;
+  const { handleCommCreate, handleCommDelete, currentUser } = props;
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -32,6 +32,9 @@ export default function PostDetails(props) {
         <div key={comment.id}>
           <p>{comment.content}</p>
           <p>{comment?.user?.username}</p>
+          {currentUser?.id === comment.user_id && (
+            <button onClick={() => handleCommDelete(comment.id)}>Delete</button>
+          )}
         </div>
       ))}
     </section>

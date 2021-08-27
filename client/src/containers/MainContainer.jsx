@@ -2,7 +2,11 @@ import { useState, useEffect } from "react";
 import { Switch, Route, useHistory } from "react-router-dom";
 import { getAllPosts, postPost, putPost, deletePost } from "../services/posts";
 import { getAllSegments, addSegmentToPost } from "../services/segments";
-import { addCommentToPost, postComment } from "../services/comments";
+import {
+  addCommentToPost,
+  postComment,
+  deleteComment,
+} from "../services/comments";
 import Posts from "../screens/Posts/Posts";
 import PostCreate from "../screens/PostCreate/PostCreate";
 import UserPosts from "../screens/UserPosts/UserPosts";
@@ -45,6 +49,11 @@ export default function MainContainer(props) {
     setPosts((prevState) => prevState.filter((post) => post.id !== id));
   };
 
+  const handleCommDelete = async (id) => {
+    await deleteComment(id);
+    setPosts((prevState) => prevState.filter((post) => post.id !== id));
+  };
+
   const handleUpdate = async (id, formData) => {
     const postData = await putPost(id, formData);
     setPosts((prevState) =>
@@ -69,7 +78,7 @@ export default function MainContainer(props) {
   const handleCommCreate = async (commentData, postId) => {
     console.log(commentData);
     const newComment = await postComment(commentData);
-    console.log(newComment)
+    console.log(newComment);
     const updatePost = await addCommentToPost(newComment.id, postId);
     setPosts((prevState) =>
       prevState.map((post) => {
@@ -103,7 +112,11 @@ export default function MainContainer(props) {
           <OthersPosts />
         </Route>
         <Route exact path="/posts/:id">
-          <PostDetails handleCommCreate={handleCommCreate} />
+          <PostDetails
+            handleCommDelete={handleCommDelete}
+            handleCommCreate={handleCommCreate}
+            currentUser={currentUser}
+          />
         </Route>
         <Route exact path="/myposts">
           <UserPosts
