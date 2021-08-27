@@ -34,6 +34,12 @@ export default function SegmentPosts(props) {
     <section>
       <hr />
       <div className="categoryBanner">
+        <input
+          type="search"
+          className="searchBar"
+          onChange={(event) => handleSearch(event)}
+          placeholder="SEARCH"
+        />
         <Link to={`/`}>
           <div className="categoryHeader">Discover</div>
         </Link>
@@ -47,12 +53,6 @@ export default function SegmentPosts(props) {
       </div>
       <hr />
       <h1>{segData?.name}</h1>
-      <input
-        type="search"
-        className="searchBar"
-        onChange={(event) => handleSearch(event)}
-        placeholder="SEARCH"
-      />
       <section className="masonGridContainer">
         <Masonry
           breakpointCols={breakpoints}

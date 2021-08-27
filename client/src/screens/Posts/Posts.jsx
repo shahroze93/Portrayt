@@ -10,6 +10,12 @@ export default function Posts(props) {
     <section>
       <hr />
       <div className="categoryBanner">
+        <input
+          type="search"
+          className="searchBar"
+          onChange={(event) => handleSearch(event)}
+          placeholder="SEARCH"
+        />
         <Link to={`/`}>
           <div className="categoryHeader">Discover</div>
         </Link>
@@ -22,12 +28,6 @@ export default function Posts(props) {
         ))}
       </div>
       <hr />
-      <input
-        type="search"
-        className="searchBar"
-        onChange={(event) => handleSearch(event)}
-        placeholder="SEARCH"
-      />
       <section className="masonGridContainer">
         <Masonry
           breakpointCols={breakpoints}

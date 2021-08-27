@@ -19,7 +19,10 @@
 .categoryBanner {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 4vw;
+  padding-left: 4vw;
 }
 
 /* search bar CSS taken from https://www.sliderrevolution.com/resources/css-search-box/ */
@@ -43,7 +46,7 @@
     9px center;
   border: solid 1px #ccc;
   padding: 9px 10px 9px 32px;
-  width: 55px;
+  width: 100px;
 
   -webkit-border-radius: 10em;
   -moz-border-radius: 10em;
@@ -54,7 +57,7 @@
   transition: all 0.5s;
 }
 .searchBar[type="search"]:focus {
-  width: 130px;
+  width: 400px;
   background-color: #fff;
   border-color: #66cc75;
 
