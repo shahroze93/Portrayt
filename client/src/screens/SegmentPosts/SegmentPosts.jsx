@@ -20,10 +20,10 @@ export default function SegmentPosts(props) {
   const [filteredData, setFilteredData] = useState(segData);
 
   const handleSearch = (event) => {
-    let value = event.target.value;
+    let value = event.target.value.toLowerCase();
     let result = [];
     result = segData.posts.filter((post) => {
-      return post.name.search(value) !== -1;
+      return post.name.toLowerCase().search(value) !== -1;
     });
     setFilteredData(result);
   };

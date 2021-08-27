@@ -96,15 +96,13 @@ export default function MainContainer(props) {
   const [filteredData, setFilteredData] = useState(posts);
 
   const handleSearch = (event) => {
-    let value = event.target.value;
+    let value = event.target.value.toLowerCase();
     let result = [];
     result = posts.filter((post) => {
-      return post.name.search(value) !== -1;
+      return post.name.toLowerCase().search(value) !== -1;
     });
     setFilteredData(result);
   };
-
-  console.log(filteredData);
 
   return (
     <div>

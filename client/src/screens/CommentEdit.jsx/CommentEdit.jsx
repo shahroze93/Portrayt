@@ -16,8 +16,6 @@ export default function CommentEdit(props) {
     }
   }, [comment]);
 
-  console.log(formData);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
