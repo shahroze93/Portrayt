@@ -35,12 +35,12 @@ export default function SegmentPosts(props) {
       <hr />
       <div className="categoryBanner">
         <Link to={`/`}>
-          <h3>Discover</h3>
+          <div className="categoryHeader">Discover</div>
         </Link>
         {segments.map((segment) => (
           <div key={segment.id}>
             <Link to={`/segments/${segment.id}`}>
-              <h3>{segment.name}</h3>
+              <div className="categoryHeader">{segment.name}</div>
             </Link>
           </div>
         ))}
@@ -48,7 +48,7 @@ export default function SegmentPosts(props) {
       <hr />
       <h1>{segData?.name}</h1>
       <input
-        type="text"
+        type="search"
         className="searchBar"
         onChange={(event) => handleSearch(event)}
         placeholder="SEARCH"

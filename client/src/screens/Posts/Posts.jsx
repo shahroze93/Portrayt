@@ -11,19 +11,19 @@ export default function Posts(props) {
       <hr />
       <div className="categoryBanner">
         <Link to={`/`}>
-          <h3>Discover</h3>
+          <div className="categoryHeader">Discover</div>
         </Link>
         {segments.map((segment) => (
           <div key={segment.id}>
             <Link to={`/segments/${segment.id}`}>
-              <h3>{segment.name}</h3>
+              <div className="categoryHeader">{segment.name}</div>
             </Link>
           </div>
         ))}
       </div>
       <hr />
       <input
-        type="text"
+        type="search"
         className="searchBar"
         onChange={(event) => handleSearch(event)}
         placeholder="SEARCH"

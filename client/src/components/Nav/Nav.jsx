@@ -8,7 +8,7 @@ export default function Nav(props) {
     <section className="navbarContainer">
       <div className="logoNuser">
         <Link to="/">
-          <div className="logo">PORTRAYT</div>
+          <div className="logo">Portrayt</div>
         </Link>
         {currentUser && (
           <div>
