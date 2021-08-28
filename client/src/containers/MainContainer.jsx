@@ -147,6 +147,7 @@ export default function MainContainer(props) {
             currentUser={currentUser}
             toggle={toggle}
             handleCommEdit={handleCommEdit}
+            segments={segments}
           />
         </Route>
         <Route exact path="/myposts">

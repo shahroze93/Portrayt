@@ -1,3 +1,4 @@
+import "./PostDetails.css";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
@@ -15,6 +16,7 @@ export default function PostDetails(props) {
     currentUser,
     toggle,
     handleCommEdit,
+    segments
   } = props;
 
   useEffect(() => {
@@ -27,14 +29,36 @@ export default function PostDetails(props) {
 
   return (
     <section>
-      <h2>{postData?.user?.username}</h2>
-      <h4>{postData?.name}</h4>
-      <Link to={`/segments/${postData?.segments[0]?.id}`}>
-        <p>{postData?.segments[0]?.name}</p>
-      </Link>
-      <img src={postData?.img_url} alt={postData?.name} />
-      <p>{postData?.description}</p>
-      <p>{postData?.link_url}</p>
+      <hr />
+      <div className="categoryBanner">
+        <Link className="catLink" to={`/`}>
+          <div className="categoryHeader">Discover</div>
+        </Link>
+        {segments.map((segment) => (
+          <div key={segment.id}>
+            <Link className="catLink" to={`/segments/${segment.id}`}>
+              <div className="categoryHeader">{segment.name}</div>
+            </Link>
+          </div>
+        ))}
+      </div>
+      <hr />
+      <div className="postContainer">
+        <div className="detailBanner">
+          <div className="detailCreator">{postData?.user?.username}</div>
+          <div className="detailName">{postData?.name}</div>
+          <Link to={`/segments/${postData?.segments[0]?.id}`}>
+            <div className="detailCat">{postData?.segments[0]?.name}</div>
+          </Link>
+        </div>
+        <img
+          className="detailImage"
+          src={postData?.img_url}
+          alt={postData?.name}
+        />
+        <div className="detailDesc">{postData?.description}</div>
+        <div className="detailURL">{postData?.link_url}</div>
+      </div>
       <CommentCreate
         currentUser={currentUser}
         handleCommCreate={handleCommCreate}

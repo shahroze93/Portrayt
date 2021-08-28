@@ -12,16 +12,20 @@ export default function Nav(props) {
         </Link>
         {currentUser && (
           <div>
-            <Link to={`/edit-account`}>
-              <p>{currentUser?.username}</p>
+            <Link className="userLink" to={`/edit-account`}>
+              Hi!, {currentUser?.username}
             </Link>
           </div>
         )}
       </div>
       {currentUser ? (
         <div className="authorizedNav">
-          <Link className="navOption" to="/posts/new">Create Post</Link>
-          <Link to="/myposts">My Posts</Link>
+          <Link className="navOption" to="/posts/new">
+            Create Post
+          </Link>
+          <Link className="navOption" to="/myposts">
+            My Posts
+          </Link>
           <button onClick={handleLogout}>Logout</button>
         </div>
       ) : (

@@ -1,0 +1,19 @@
+.detailBanner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 70%;
+  margin: auto;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.postContainer {
+  width: 60vw;
+  margin: auto;
+  border: 1px solid black;
+}
+
+.detailCreator {
+  font-weight: bolder;
+}
