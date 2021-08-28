@@ -40,12 +40,12 @@ export default function SegmentPosts(props) {
           onChange={(event) => handleSearch(event)}
           placeholder="SEARCH"
         />
-        <Link to={`/`}>
+        <Link className="catLink" to={`/`}>
           <div className="categoryHeader">Discover</div>
         </Link>
         {segments.map((segment) => (
           <div key={segment.id}>
-            <Link to={`/segments/${segment.id}`}>
+            <Link className="catLink" to={`/segments/${segment.id}`}>
               <div className="categoryHeader">{segment.name}</div>
             </Link>
           </div>

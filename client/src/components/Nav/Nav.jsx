@@ -7,8 +7,8 @@ export default function Nav(props) {
   return (
     <section className="navbarContainer">
       <div className="logoNuser">
-        <Link to="/">
-          <div className="logo">Portrayt</div>
+        <Link className="logoLink" to="/">
+          <div className="logo">PORTRAYT</div>
         </Link>
         {currentUser && (
           <div>
@@ -20,7 +20,7 @@ export default function Nav(props) {
       </div>
       {currentUser ? (
         <div className="authorizedNav">
-          <Link to="/posts/new">Create Post</Link>
+          <Link className="navOption" to="/posts/new">Create Post</Link>
           <Link to="/myposts">My Posts</Link>
           <button onClick={handleLogout}>Logout</button>
         </div>

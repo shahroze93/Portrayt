@@ -25,6 +25,17 @@
   padding-left: 4vw;
 }
 
+.categoryHeader {
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: bolder;
+  color: black;
+}
+
+.categoryHeader:hover {
+  color: #66cc75;
+}
+
 /* search bar CSS taken from https://www.sliderrevolution.com/resources/css-search-box/ */
 .searchBar {
   outline: none;
@@ -60,15 +71,12 @@
   width: 400px;
   background-color: #fff;
   border-color: #66cc75;
-
   -webkit-box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
   -moz-box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
   box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
 }
 
-.searchBar:-moz-placeholder {
-  color: #999;
-}
-.searchBar::-webkit-input-placeholder {
-  color: #999;
+.catLink {
+  text-decoration: none;
+  list-style: none;
 }

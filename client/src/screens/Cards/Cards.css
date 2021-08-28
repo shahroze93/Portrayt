@@ -14,5 +14,9 @@
   width: 250px;
   transition: all 0.25s ease-in-out;
   background-color: white;
-  border: 1px solid #79beb3;
+  border: 1px solid #66cc75;
+}
+
+.cardContainer:hover {
+  transform: scale(1.02);
 }
