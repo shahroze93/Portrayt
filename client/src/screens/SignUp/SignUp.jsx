@@ -1,12 +1,12 @@
-import React from 'react'
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function SignUp(props) {
   const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    password: '',
+    username: "",
+    email: "",
+    password: "",
   });
   const { handleSignUp } = props;
 
@@ -25,39 +25,66 @@ export default function SignUp(props) {
         handleSignUp(formData);
       }}
     >
-      <h3>Sign Up</h3>
-      <label>
-        Username:
-        <input
-          type='text'
-          name='username'
-          value={formData.username}
-          onChange={handleChange}
-        />
-      </label>
-      <br />
-      <label>
-        Email:
-        <input
-          type='text'
-          name='email'
-          value={formData.email}
-          onChange={handleChange}
-        />
-      </label>
-      <br />
-      <label>
-        Password:
-        <input
-          type='password'
-          name='password'
-          value={formData.password}
-          onChange={handleChange}
-        />
-      </label>
-      <br />
-      <button>Submit</button>
-      <div>Already have an account? <Link to='/login'>Login</Link></div>
+      <div className="flex items-center justify-center mt-10">
+        <div className="bg-primary-green flex flex-col w-80 border rounded-3xl px-8 pb-10 pt-4 shadow-md">
+          <div>
+            <Link className="float-right" to="/">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="white"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </Link>
+          </div>
+          <div className="text-white">
+            <h1 className="font-comfortaa text-4xl">SIGN UP</h1>
+          </div>
+          <div className="flex flex-col space-y-8 mt-6">
+            <input
+              type="text"
+              name="username"
+              value={formData.username}
+              onChange={handleChange}
+              placeholder="Username"
+              className="border rounded-xl py-3 px-3 border-green-400 placeholder-gray-500"
+            />
+            <input
+              type="text"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Email"
+              className="border rounded-xl py-3 px-3 border-green-400 placeholder-gray-500"
+            />
+            <input
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              placeholder="Password"
+              className="border rounded-xl py-3 px-3 border-green-500 placeholder-gray-500"
+            />
+            <button className="border border-green-400 bg-pri-teal text-white rounded-3xl py-3 font-semibold">
+              Submit
+            </button>
+            <div className="text-pri-teal font-semibold">
+              Already have an account?{" "}
+              <Link className="font-bold  text-white" to="/login">
+                LOGIN
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
     </form>
   );
 }
