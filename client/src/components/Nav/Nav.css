@@ -3,11 +3,9 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  /* position: fixed; */
   width: 100%;
   top: 0rem;
   margin-top: 10px;
-  /* z-index: 100; */
 }
 
 .logoNuser {
@@ -60,7 +58,7 @@
   text-transform: uppercase;
   padding: 10px;
   color: black;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
 }
 
@@ -76,7 +74,7 @@
   text-transform: uppercase;
   padding: 10px;
   color: red;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
   cursor: pointer;
 }
