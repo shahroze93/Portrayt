@@ -48,9 +48,8 @@ export default function PostDetails(props) {
           <div className="detailCreator">{postData?.user?.username}</div>
           <div className="detailName">{postData?.name}</div>
           <Link
-            className="categoryHeader"
-            to={`/segments/${postData?.segments[0]?.id}`}
-          >
+            className="detailCat"
+            to={`/segments/${postData?.segments[0]?.id}`}>
             {postData?.segments[0]?.name}
           </Link>
         </div>

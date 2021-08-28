@@ -26,12 +26,18 @@ export default function Nav(props) {
           <Link className="navOption" to="/myposts">
             My Posts
           </Link>
-          <button onClick={handleLogout}>Logout</button>
+          <div className="logout" onClick={handleLogout}>
+            Logout
+          </div>
         </div>
       ) : (
         <div className="loginNsignup">
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Sign Up</Link>
+          <Link className="navOption" to="/login">
+            Login
+          </Link>
+          <Link className="navOption" to="/signup">
+            Sign Up
+          </Link>
         </div>
       )}
     </section>
