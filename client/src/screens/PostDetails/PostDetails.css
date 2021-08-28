@@ -11,7 +11,10 @@
 .postContainer {
   width: 60vw;
   margin: auto;
-  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border: 1px solid #66cc75;
 }
 
 .detailCreator {
@@ -20,4 +23,22 @@
 
 #editBox {
   display: none;
+}
+
+.detailDesc {
+  margin-top: 10px;
+  padding-bottom: 20px;
+}
+
+.detailImage {
+  max-width: 500px;
+  border-radius: 15px;
+}
+
+.detailImage {
+  cursor: zoom-in;
+}
+
+.detailImage:active {
+  transform: scale(1.4);
 }
