@@ -42,10 +42,9 @@ export default function PostDetails(props) {
   }
 
   const handleEdit = (comment) => {
-    setComment(comment)
-    switchBox1()
+    setComment(comment);
+    switchBox1();
   };
-
 
   return (
     <section>
@@ -112,7 +111,7 @@ export default function PostDetails(props) {
               <div>
                 <button onClick={() => handleEdit(comment)}>EDIT</button>
                 <button onClick={() => handleCommDelete(comment.id)}>
-                  Delete
+                  DELETE
                 </button>
               </div>
             )}

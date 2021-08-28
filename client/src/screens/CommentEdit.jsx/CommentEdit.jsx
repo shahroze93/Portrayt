@@ -27,7 +27,7 @@ export default function CommentEdit(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     handleCommEdit(comment.id, formData);
-    switchBox0()
+    switchBox0();
   };
 
   return (
@@ -43,6 +43,7 @@ export default function CommentEdit(props) {
           onChange={handleChange}
         />
         <button type="submit">SUBMIT</button>
+        <button onClick={switchBox0}>CANCEL</button>
       </form>
     </div>
   );
