@@ -55,7 +55,8 @@ export default function SignUp(props) {
               value={formData.username}
               onChange={handleChange}
               placeholder="Username"
-              className="border rounded-xl py-3 px-3 border-green-400 placeholder-gray-500"
+              className="border rounded-xl py-3 px-3 border-green-400 placeholder-gray-500
+              focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
             />
             <input
               type="text"
@@ -63,7 +64,8 @@ export default function SignUp(props) {
               value={formData.email}
               onChange={handleChange}
               placeholder="Email"
-              className="border rounded-xl py-3 px-3 border-green-400 placeholder-gray-500"
+              className="border rounded-xl py-3 px-3 border-green-400 placeholder-gray-500
+              focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
             />
             <input
               type="password"
@@ -71,14 +73,18 @@ export default function SignUp(props) {
               value={formData.password}
               onChange={handleChange}
               placeholder="Password"
-              className="border rounded-xl py-3 px-3 border-green-500 placeholder-gray-500"
+              className="border rounded-xl py-3 px-3 border-green-500 placeholder-gray-500
+              focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
             />
-            <button className="border border-green-400 bg-pri-teal text-white rounded-3xl py-3 font-semibold">
+            <button className="border border-green-400 bg-pri-teal text-white rounded-3xl py-3 font-semibold hover:bg-blue-600">
               Submit
             </button>
             <div className="text-pri-teal font-semibold">
               Already have an account?{" "}
-              <Link className="font-bold  text-white" to="/login">
+              <Link
+                className="font-bold  text-white hover:text-blue-600"
+                to="/login"
+              >
                 LOGIN
               </Link>
             </div>
