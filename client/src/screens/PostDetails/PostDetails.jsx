@@ -16,7 +16,7 @@ export default function PostDetails(props) {
     currentUser,
     toggle,
     handleCommEdit,
-    segments
+    segments,
   } = props;
 
   useEffect(() => {
@@ -47,8 +47,11 @@ export default function PostDetails(props) {
         <div className="detailBanner">
           <div className="detailCreator">{postData?.user?.username}</div>
           <div className="detailName">{postData?.name}</div>
-          <Link to={`/segments/${postData?.segments[0]?.id}`}>
-            <div className="detailCat">{postData?.segments[0]?.name}</div>
+          <Link
+            className="categoryHeader"
+            to={`/segments/${postData?.segments[0]?.id}`}
+          >
+            {postData?.segments[0]?.name}
           </Link>
         </div>
         <img
