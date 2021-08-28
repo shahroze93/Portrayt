@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 export default function CommentEdit(props) {
-  const { handleCommEdit, currentUser, comment } = props;
+  const { handleCommEdit, currentUser, comment, switchBox0 } = props;
   const [formData, setFormData] = useState({
     content: "",
   });
@@ -27,6 +27,7 @@ export default function CommentEdit(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     handleCommEdit(comment.id, formData);
+    switchBox0()
   };
 
   return (

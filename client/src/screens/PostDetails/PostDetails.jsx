@@ -27,6 +27,26 @@ export default function PostDetails(props) {
     fetchPost();
   }, [id, toggle]);
 
+  function switchBox1() {
+    let x = document.getElementById("editBox");
+    x.style.display = "block";
+    let y = document.getElementById("newBox");
+    y.style.display = "none";
+  }
+
+  function switchBox0() {
+    let x = document.getElementById("editBox");
+    x.style.display = "none";
+    let y = document.getElementById("newBox");
+    y.style.display = "block";
+  }
+
+  const handleEdit = (comment) => {
+    setComment(comment)
+    switchBox1()
+  };
+
+
   return (
     <section>
       <hr />
@@ -49,7 +69,8 @@ export default function PostDetails(props) {
           <div className="detailName">{postData?.name}</div>
           <Link
             className="detailCat"
-            to={`/segments/${postData?.segments[0]?.id}`}>
+            to={`/segments/${postData?.segments[0]?.id}`}
+          >
             {postData?.segments[0]?.name}
           </Link>
         </div>
@@ -61,16 +82,22 @@ export default function PostDetails(props) {
         <div className="detailDesc">{postData?.description}</div>
         <div className="detailURL">{postData?.link_url}</div>
       </div>
-      <CommentCreate
-        currentUser={currentUser}
-        handleCommCreate={handleCommCreate}
-        postData={postData}
-      />
-      <CommentEdit
-        currentUser={currentUser}
-        handleCommEdit={handleCommEdit}
-        comment={comment}
-      />
+      <div id="newBox">
+        <CommentCreate
+          currentUser={currentUser}
+          handleCommCreate={handleCommCreate}
+          postData={postData}
+        />
+      </div>
+      <div id="editBox">
+        <CommentEdit
+          currentUser={currentUser}
+          handleCommEdit={handleCommEdit}
+          comment={comment}
+          switchBox0={switchBox0}
+        />
+      </div>
+      <hr />
       {postData?.comments
         ?.sort(
           ({ id: previousID }, { id: currentID }) => previousID - currentID
@@ -83,7 +110,7 @@ export default function PostDetails(props) {
             <p>{comment?.user?.username}</p>
             {currentUser?.id === comment.user_id && (
               <div>
-                <button onClick={() => setComment(comment)}>EDIT</button>
+                <button onClick={() => handleEdit(comment)}>EDIT</button>
                 <button onClick={() => handleCommDelete(comment.id)}>
                   Delete
                 </button>

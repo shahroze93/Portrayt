@@ -19,6 +19,7 @@ export default function CommentCreate(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     handleCommCreate(formData, postData.id);
+    e.target.reset();
   };
 
   return (

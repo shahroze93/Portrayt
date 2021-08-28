@@ -17,3 +17,7 @@
 .detailCreator {
   font-weight: bolder;
 }
+
+#editBox {
+  display: none;
+}
