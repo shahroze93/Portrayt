@@ -64,7 +64,9 @@ export default function PostDetails(props) {
       <hr />
       <div className="postContainer">
         <div className="detailBanner">
-          <div className="detailCreator">{postData?.user?.username}</div>
+          <Link className="detailCreator" to={`/users/${postData?.user?.id}`}>
+            {postData?.user?.username}
+          </Link>
           <div className="detailName">{postData?.name}</div>
           <Link
             className="detailCat"
@@ -96,27 +98,40 @@ export default function PostDetails(props) {
           switchBox0={switchBox0}
         />
       </div>
-      <hr />
-      {postData?.comments
-        ?.sort(
-          ({ id: previousID }, { id: currentID }) => previousID - currentID
-        )
-        .slice(0)
-        .reverse()
-        .map((comment) => (
-          <div key={comment.id}>
-            <p>{comment.content}</p>
-            <p>{comment?.user?.username}</p>
-            {currentUser?.id === comment.user_id && (
-              <div>
-                <button onClick={() => handleEdit(comment)}>EDIT</button>
-                <button onClick={() => handleCommDelete(comment.id)}>
-                  DELETE
-                </button>
+      <section className="commentContainer">
+        {postData?.comments
+          ?.sort(
+            ({ id: previousID }, { id: currentID }) => previousID - currentID
+          )
+          .slice(0)
+          .reverse()
+          .map((comment) => (
+            <div key={comment.id}>
+              <div className="bg-white max-w-md md:max-w-2xl m-auto rounded-2xl p-3  flex flex-col justify-center items-start shadow-lg mb-2">
+                <h3 className="text-primary-green font-semibold text-lg">
+                  {comment?.user?.username}
+                </h3>
+                <p className="text-gray-600 text-lg ">{comment.content}</p>
               </div>
-            )}
-          </div>
-        ))}
+              {currentUser?.id === comment.user_id && (
+                <div className="max-w-md md:max-w-2xl m-auto flex justify-end mb-2">
+                  <button
+                    class="shadow-lg hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                    onClick={() => handleEdit(comment)}
+                  >
+                    EDIT
+                  </button>
+                  <button
+                    class="shadow-lg hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                    onClick={() => handleCommDelete(comment.id)}
+                  >
+                    DELETE
+                  </button>
+                </div>
+              )}
+            </div>
+          ))}
+      </section>
     </section>
   );
 }

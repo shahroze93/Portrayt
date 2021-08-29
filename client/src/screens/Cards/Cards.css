@@ -1,6 +1,7 @@
 .cardImage {
-  max-width: 245px;
+  max-width: 242px;
   border-radius: 15px;
+  margin: auto;
 }
 
 .cardContainer {
