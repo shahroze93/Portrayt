@@ -26,7 +26,7 @@ export default function SignUp(props) {
       }}
     >
       <div className="flex items-center justify-center mt-10">
-        <div className="bg-primary-green flex flex-col w-80 border rounded-3xl px-8 pb-10 pt-4 shadow-md">
+        <div className="bg-primary-green flex flex-col w-100 border rounded-3xl px-8 pb-10 pt-4 shadow-md">
           <div>
             <Link className="float-right" to="/">
               <svg

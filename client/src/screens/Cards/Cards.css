@@ -46,6 +46,7 @@
 .cardUser {
   font-weight: bold;
   font-size: 16px;
+  margin-right: 5px;
 }
 
 .cardUser:hover {
@@ -53,7 +54,6 @@
 }
 
 .cardName {
-  margin-left: 5px;
   font-size: 16px;
 }
 

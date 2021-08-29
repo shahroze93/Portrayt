@@ -108,6 +108,7 @@ export default function PostDetails(props) {
       </div>
       <section className="commentContainer">
         <div className="commSectionHeader">Comments</div>
+        {currentUser ? (<>
         <div id="newBox">
           <CommentCreate
             currentUser={currentUser}
@@ -122,7 +123,10 @@ export default function PostDetails(props) {
             comment={comment}
             switchBox0={switchBox0}
           />
-        </div>
+          </div>
+          </>) : (
+          <div className="noLoginComment">Please login or sign up to comment</div>
+        )}
         <div>
           <button className="hideBtn" onClick={hideShow}>
             <svg

@@ -152,7 +152,10 @@ export default function MainContainer(props) {
           <SegmentPosts breakpoints={breakpoints} segments={segments} />
         </Route>
         <Route exact path="/users/:id">
-          <OthersPosts />
+          <OthersPosts
+            segments={segments}
+            breakpoints={breakpoints}
+          />
         </Route>
         <Route exact path="/posts/:id">
           <PostDetails
