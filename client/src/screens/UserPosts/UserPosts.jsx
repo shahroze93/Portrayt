@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
+import "./UserPosts.css";
 
 export default function UserPosts(props) {
-  const { posts, handleDelete, currentUser } = props;
+  const { handleDelete, currentUser, newArray } = props;
 
   const confirmDelete = async (id) => {
     let entry = prompt(
@@ -22,12 +23,12 @@ export default function UserPosts(props) {
 
   return (
     <div>
-      <h3>My Posts</h3>
+      <h3 className="segmentHeader">My Posts</h3>
       <Link to={`/edit-account`}>Edit Account</Link>
-      {posts.map((post) => (
-        <div key={post.id}>
-          {currentUser?.id === post.user_id && (
-            <section>
+      <div className="userPostsContainer">
+        {newArray?.map((post) => (
+          <div className="userPostDiv" key={post.id}>
+            <div className="userPostCard">
               <Link to={`/posts/${post.id}`}>
                 <h4>{post.name}</h4>
                 <img src={post.img_url} alt={post.name} />
@@ -38,10 +39,10 @@ export default function UserPosts(props) {
                 </Link>
                 <button onClick={() => confirmDelete(post.id)}>Delete</button>
               </div>
-            </section>
-          )}
-        </div>
-      ))}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

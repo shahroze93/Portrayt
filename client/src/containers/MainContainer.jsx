@@ -104,6 +104,19 @@ export default function MainContainer(props) {
     setFilteredData(result);
   };
 
+  // code to only return the posts by the currentUser only
+  const [newArray, setNewArray] = useState([]);
+  useEffect(() => {
+    const fetchUserPosts = async () => {
+      let newArray = [];
+      posts?.map((post) => {
+        if (currentUser?.id === post.user_id) newArray.push(post);
+        setNewArray(newArray);
+      });
+    };
+    fetchUserPosts();
+  }, [currentUser, posts]);
+
   const breakpoints = {
     default: 6,
     1600: 5,
@@ -152,9 +165,9 @@ export default function MainContainer(props) {
         </Route>
         <Route exact path="/myposts">
           <UserPosts
-            posts={posts}
             handleDelete={handleDelete}
             currentUser={currentUser}
+            newArray={newArray}
           />
         </Route>
       </Switch>
