@@ -112,6 +112,7 @@ export default function MainContainer(props) {
       posts?.map((post) => {
         if (currentUser?.id === post.user_id) newArray.push(post);
         setNewArray(newArray);
+        return newArray;
       });
     };
     fetchUserPosts();

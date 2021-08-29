@@ -6,13 +6,13 @@ class SegmentsController < ApplicationController
   def index
     @segments = Segment.all
 
-    render json: @segments, include: [:posts => {:include => {:user => {:only => :username}}}], status: :ok
+    render json: @segments, include: [:posts], status: :ok
   end
 
   # GET /segments/1
   def show
     @segment = Segment.find(params[:id])
-    render json: @segment, include: [:posts => {:include => {:user => {:only => :username}}}], status: :ok
+    render json: @segment, include: [:posts => {:include => :user}], status: :ok
   end
 
   # POST /segments
