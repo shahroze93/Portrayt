@@ -52,7 +52,7 @@ export default function SegmentPosts(props) {
         ))}
       </div>
       <hr />
-      <h1>{segData?.name}</h1>
+      <h1 className="segmentHeader">{segData?.name}</h1>
       <section className="masonGridContainer">
         <Masonry
           breakpointCols={breakpoints}

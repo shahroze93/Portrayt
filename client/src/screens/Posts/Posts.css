@@ -24,6 +24,7 @@
   padding-right: 4vw;
   padding-left: 4vw;
   height: 50px;
+  font-family: "Comfortaa", cursive;
 }
 
 .categoryHeader {
@@ -53,31 +54,36 @@
 }
 
 .searchBar[type="search"] {
-  background: #ededed
+  background: #d1fae5
     url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat
     9px center;
-  border: solid 1px #ccc;
+  border: solid 1px #66cc75;
   padding: 9px 10px 9px 32px;
   width: 100px;
-
-  -webkit-border-radius: 10em;
-  -moz-border-radius: 10em;
   border-radius: 10em;
-
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .searchBar[type="search"]:focus {
   width: 400px;
   background-color: #fff;
   border-color: #66cc75;
-  -webkit-box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
-  -moz-box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
   box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
+}
+
+.searchBar::placeholder {
+  color: teal;
 }
 
 .catLink {
   text-decoration: none;
   list-style: none;
+}
+
+.segmentHeader {
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: bolder;
+  color: black;
+  margin-top: 10px;
+  font-family: "Comfortaa", cursive;
 }
