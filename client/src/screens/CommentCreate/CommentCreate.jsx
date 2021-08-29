@@ -25,7 +25,7 @@ export default function CommentCreate(props) {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <div>Add Comment</div>
+        <div className="commentsHeader">Add Comment</div>
         <div className="currentUserTag">
           <svg
             xmlns="http://www.w3.org/2000/svg"

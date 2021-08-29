@@ -33,7 +33,7 @@ export default function CommentEdit(props) {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <div>Edit Comment</div>
+        <div className="commentsHeader">Edit Comment</div>
         <div className="currentUserTag">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -57,14 +57,21 @@ export default function CommentEdit(props) {
           name="content"
           placeholder="enter a public comment"
           onChange={handleChange}
-          className="w-8/12 md:w-9/12 border rounded-full py-3 px-3 border-green-400 placeholder-gray-500 
-          focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent m-3"
+          className="w-6/12 md:w-8/12 border rounded-full py-3 px-3 border-green-400 placeholder-gray-500
+          focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent m-2"
         />
         <button
           className="bg-green-200 hover:bg-primary-green text-pri-teal hover:text-white font-bold py-2 px-4 rounded-full"
+          onClick={switchBox0}
+        >
+          CANCEL
+        </button>
+        <button
+          className="bg-green-200 hover:bg-primary-green text-pri-teal hover:text-white font-bold py-2 px-4 rounded-full"
           type="submit"
-        >SUBMIT</button>
-        <button onClick={switchBox0}>CANCEL</button>
+        >
+          SUBMIT
+        </button>
       </form>
     </div>
   );
