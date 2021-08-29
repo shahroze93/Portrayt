@@ -33,8 +33,15 @@ export default function CommentCreate(props) {
           name="content"
           placeholder="enter a public comment"
           onChange={handleChange}
+          className="w-9/12 border rounded-full py-3 px-3 border-green-400 placeholder-gray-500 
+          focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent m-3"
         />
-        <button type="submit">SUBMIT</button>
+        <button
+          className="bg-green-200 hover:bg-primary-green text-pri-teal hover:text-white font-bold py-2 px-4 rounded-full"
+          type="submit"
+        >
+          SUBMIT
+        </button>
       </form>
     </div>
   );

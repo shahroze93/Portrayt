@@ -83,22 +83,22 @@ export default function PostDetails(props) {
         <div className="detailDesc">{postData?.description}</div>
         <div className="detailURL">{postData?.link_url}</div>
       </div>
-      <div id="newBox">
-        <CommentCreate
-          currentUser={currentUser}
-          handleCommCreate={handleCommCreate}
-          postData={postData}
-        />
-      </div>
-      <div id="editBox">
-        <CommentEdit
-          currentUser={currentUser}
-          handleCommEdit={handleCommEdit}
-          comment={comment}
-          switchBox0={switchBox0}
-        />
-      </div>
       <section className="commentContainer">
+        <div id="newBox">
+          <CommentCreate
+            currentUser={currentUser}
+            handleCommCreate={handleCommCreate}
+            postData={postData}
+          />
+        </div>
+        <div id="editBox">
+          <CommentEdit
+            currentUser={currentUser}
+            handleCommEdit={handleCommEdit}
+            comment={comment}
+            switchBox0={switchBox0}
+          />
+        </div>
         {postData?.comments
           ?.sort(
             ({ id: previousID }, { id: currentID }) => previousID - currentID
@@ -116,13 +116,13 @@ export default function PostDetails(props) {
               {currentUser?.id === comment.user_id && (
                 <div className="max-w-md md:max-w-2xl m-auto flex justify-end mb-2">
                   <button
-                    class="shadow-lg hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                    className="bg-green-200 hover:bg-primary-green text-pri-teal hover:text-white font-bold py-2 px-4 rounded-full"
                     onClick={() => handleEdit(comment)}
                   >
                     EDIT
                   </button>
                   <button
-                    class="shadow-lg hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                    className="bg-green-200 hover:bg-primary-green text-pri-teal hover:text-white font-bold py-2 px-4 rounded-full"
                     onClick={() => handleCommDelete(comment.id)}
                   >
                     DELETE
