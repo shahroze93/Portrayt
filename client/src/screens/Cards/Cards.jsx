@@ -10,17 +10,22 @@ function Cards(props) {
       <div className="cardInfo">
         <Link to={`/posts/${post.id}`}>
           <img className="cardImage" src={post.img_url} alt={post.name} />
-          <div className="cardName">{post.name}</div>
         </Link>
-        <Link to={`/users/${post.user?.id}`}>
-          <div className="cardUser">{post.user?.username}</div>
-        </Link>
-        <div className="cardDesc">{post.description}</div>
         {post?.segments?.map((segment) => (
           <div className="cardCategory" key={segment.id}>
             <Link to={`/segments/${segment.id}`}>{segment.name}</Link>
           </div>
         ))}
+        <div className="userNamePost">
+          <Link to={`/users/${post.user?.id}`}>
+            <div className="cardUser">{post.user?.username}</div>
+          </Link>
+          <Link className="cardName" to={`/posts/${post.id}`}>
+            {post.name}
+          </Link>
+        </div>
+        <hr />
+        <div className="cardDesc">{post.description}</div>
       </div>
     </div>
   );
