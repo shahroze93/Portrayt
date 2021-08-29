@@ -12,7 +12,7 @@ export default function Nav(props) {
         </Link>
         {currentUser && (
           <div>
-            <Link className="userLink" to={`/edit-account`}>
+            <Link className="userLink" to="/myposts">
               Hi, {currentUser?.username}!
             </Link>
           </div>

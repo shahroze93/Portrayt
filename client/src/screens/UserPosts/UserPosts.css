@@ -1,17 +1,35 @@
 .userPostsContainer {
-  background-color: yellow;
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 700px;
   margin: auto;
+  justify-content: space-evenly;
+  width: 95%;
+  margin-top: 20px;
 }
 
 .userPostDiv {
-  border: 1px solid black;
-  background-color: red;
+  border: 1px solid #66cc75;
+  border-radius: 15px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
 }
 
-.userPostCard {
-  
+.userPostDiv:hover {
+  transition: 0.5s;
+  transform: scale(1.05);
+}
+
+.userPostImg {
+  max-height: 400px;
+  max-width: 300px;
+}
+
+.mypostBtns {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.editDelete:hover {
+  color: #66cc75;
 }
