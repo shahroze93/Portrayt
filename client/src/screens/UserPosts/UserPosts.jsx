@@ -25,6 +25,7 @@ export default function UserPosts(props) {
     <div>
       <hr />
       <h3 className="segmentHeader">My Posts</h3>
+      <br />
       <Link className="navOption" to={`/edit-account`}>
         Edit Account
       </Link>

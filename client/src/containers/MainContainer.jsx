@@ -63,6 +63,7 @@ export default function MainContainer(props) {
         return post.id === Number(id) ? postData : post;
       })
     );
+    setToggle((prevToggle) => !prevToggle);
     history.push("/");
   };
 
@@ -152,10 +153,7 @@ export default function MainContainer(props) {
           <SegmentPosts breakpoints={breakpoints} segments={segments} />
         </Route>
         <Route exact path="/users/:id">
-          <OthersPosts
-            segments={segments}
-            breakpoints={breakpoints}
-          />
+          <OthersPosts segments={segments} breakpoints={breakpoints} />
         </Route>
         <Route exact path="/posts/:id">
           <PostDetails
