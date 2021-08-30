@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 export default function PostEdit(props) {
   const [formData, setFormData] = useState({
@@ -143,9 +143,11 @@ export default function PostEdit(props) {
           <button className="w-5/12 bg-green-200 hover:bg-primary-green text-pri-teal hover:text-white font-bold py-2 px-4 rounded-full mb-5">
             Submit
           </button>
-          <button className="w-5/12 bg-green-200 hover:bg-red-400 text-pri-teal hover:text-white font-bold py-2 px-4 rounded-full mb-5">
-            Cancel
-          </button>
+          <Link to="/myposts">
+            <button className="w-5/12 bg-green-200 hover:bg-red-400 text-pri-teal hover:text-white font-bold py-2 px-4 rounded-full mb-5">
+              Cancel
+            </button>
+          </Link>
         </form>
       </div>
     </section>
