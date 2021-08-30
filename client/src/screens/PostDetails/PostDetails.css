@@ -156,11 +156,11 @@
 
 @media screen and (max-width: 1024px) {
   .postContainer {
-    max-width: 500px;
+    max-width: 600px;
   }
 
   .detailImage {
-    max-width: 450px;
+    max-width: 500px;
   }
 
   .detailBanner {
@@ -174,7 +174,17 @@
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 600px) {
+  .postContainer {
+    max-width: 100%;
+  }
+
+  .detailImage {
+    max-width: 100%;
+    border-radius: 15px;
+    margin: auto;
+  }
+
   .detailBanner {
     font-size: 12px;
   }
