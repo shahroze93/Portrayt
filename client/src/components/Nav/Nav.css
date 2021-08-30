@@ -102,3 +102,12 @@
   border-radius: 30px;
   color: white;
 }
+
+@media screen and (max-width: 1024px) {
+}
+
+@media only screen and (max-width: 400px) {
+  .authorizedNav {
+    display: none;
+  }
+}

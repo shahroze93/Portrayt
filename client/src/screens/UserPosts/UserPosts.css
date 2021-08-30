@@ -35,3 +35,22 @@
 .editDelete:hover {
   color: #66cc75;
 }
+
+@media screen and (max-width: 1024px) {
+  .userPostImg {
+    max-height: 300px;
+    max-width: 250px;
+    margin: auto;
+  }
+
+  .userPostName {
+    font-size: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+}

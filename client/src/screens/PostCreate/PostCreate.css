@@ -26,3 +26,27 @@
   padding: 20px;
   font-size: 20px;
 }
+
+@media screen and (max-width: 1024px) {
+  .newPostContainer {
+    min-width: 200px;
+    max-width: 500px;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+      rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    border: 0.5px solid #66cc75;
+    margin-top: 20px;
+    padding: 0px 50px 50px 50px;
+  }
+
+  .postIMG {
+    max-width: 400px;
+    border-radius: 15px;
+    margin: auto;
+    border-radius: 30px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+}

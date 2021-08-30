@@ -56,7 +56,7 @@
 .cardName {
   font-size: 16px;
   text-align: left;
-  color: green
+  color: green;
 }
 
 .cardDesc {
@@ -67,4 +67,14 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+@media screen and (max-width: 1024px) {
+  .cardCategory {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+
 }

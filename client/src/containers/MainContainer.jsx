@@ -125,9 +125,9 @@ export default function MainContainer(props) {
     default: 6,
     1600: 5,
     1300: 4,
-    1000: 3,
+    1024: 3,
     800: 2,
-    550: 1,
+    600: 1,
   };
   let loaderColor = "#66cc75";
 

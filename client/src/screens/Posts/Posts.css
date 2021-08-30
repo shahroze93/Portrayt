@@ -23,7 +23,7 @@
   align-items: center;
   padding-right: 4vw;
   padding-left: 4vw;
-  height: 50px;
+  min-height: 50px;
   font-family: "Comfortaa", cursive;
 }
 
@@ -90,4 +90,37 @@
 
 .loader {
   margin-top: 5px;
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media only screen and (max-width: 400px) {
+  .categoryBanner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 4vw;
+    padding-left: 4vw;
+    margin-bottom: 10px;
+  }
+
+  .categoryHeader {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bolder;
+    color: black;
+  }
+
+  .searchBar[type="search"] {
+    width: 60%;
+    padding: 5px 5px 5px 32px;
+    font-size: 16px;
+    margin-top: 5px;
+  }
+
+  .searchBar[type="search"]:focus {
+    width: 95%;
+  }
 }
