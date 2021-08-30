@@ -76,5 +76,27 @@
 }
 
 @media only screen and (max-width: 375px) {
+  .cardImage {
+    max-width: 375px;
+    border-radius: 0px;
+    margin: auto;
+  }
 
+  .cardContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: none;
+    border-radius: 15px;
+    padding: 0px 0px 10px 0px;
+    margin: 10px 10px 10px;
+    width: 375px;
+    transition: all 0.25s ease-in-out;
+    background-color: white;
+    border: none;
+  }
+
+  .productList {
+    margin-left: -15px;
+  }
 }

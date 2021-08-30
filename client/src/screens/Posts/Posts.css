@@ -98,12 +98,22 @@
 @media only screen and (max-width: 400px) {
   .categoryBanner {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: none;
     align-items: center;
-    padding-right: 4vw;
-    padding-left: 4vw;
-    margin-bottom: 10px;
+    padding-right: 0vw;
+    padding-left: 0vw;
+    margin-bottom: 0px;
+    height: 40px;
+  }
+
+  .catOptions {
+    display: inline-flex;
+    padding-right: 5px;
+    white-space: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
   }
 
   .categoryHeader {
@@ -111,16 +121,21 @@
     font-size: 14px;
     font-weight: bolder;
     color: black;
+    margin-right: 10px;
+    margin-left: 10px;
   }
 
   .searchBar[type="search"] {
-    width: 60%;
+    width: 20%;
     padding: 5px 5px 5px 32px;
     font-size: 16px;
-    margin-top: 5px;
   }
 
   .searchBar[type="search"]:focus {
     width: 95%;
+  }
+
+  .searchBar::placeholder {
+    font-size: 10px;
   }
 }

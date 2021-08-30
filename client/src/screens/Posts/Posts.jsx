@@ -31,26 +31,28 @@ export default function Posts(props) {
           onChange={(event) => handleSearch(event)}
           placeholder="SEARCH"
         />
-        <Link className="catLink" to={`/`}>
-          <div className="categoryHeader">Discover</div>
-        </Link>
-        {segments.map((segment) => (
-          <div key={segment.id}>
-            <Link className="catLink" to={`/segments/${segment.id}`}>
-              <div className="categoryHeader">{segment.name}</div>
-            </Link>
-          </div>
-        ))}
+        <div className="catOptions">
+          <Link className="catLink" to={`/`}>
+            <div className="categoryHeader">Discover</div>
+          </Link>
+          {segments.map((segment) => (
+            <div key={segment.id}>
+              <Link className="catLink" to={`/segments/${segment.id}`}>
+                <div className="categoryHeader">{segment.name}</div>
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
       <hr />
       <div className="loader">
-          <Loader
-            color={loaderColor}
-            loading={loading}
-            css={override}
-            size={50}
-          />
-        </div>
+        <Loader
+          color={loaderColor}
+          loading={loading}
+          css={override}
+          size={50}
+        />
+      </div>
       <section className="masonGridContainer">
         <Masonry
           breakpointCols={breakpoints}
