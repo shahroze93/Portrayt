@@ -22,12 +22,14 @@ export default function MainContainer(props) {
   const { currentUser } = props;
   const history = useHistory();
   const [toggle, setToggle] = useState(true);
+  let [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchPosts = async () => {
       const postList = await getAllPosts();
       setPosts(postList);
       setFilteredData(postList);
+      setLoading(!loading);
     };
     fetchPosts();
   }, [toggle]);
@@ -36,6 +38,7 @@ export default function MainContainer(props) {
     const fetchSegments = async () => {
       const segmentList = await getAllSegments();
       setSegments(segmentList);
+      setLoading(!loading);
     };
     fetchSegments();
   }, []);
@@ -127,6 +130,7 @@ export default function MainContainer(props) {
     800: 2,
     550: 1,
   };
+  let loaderColor = "#66cc75";
 
   return (
     <div>
@@ -147,10 +151,17 @@ export default function MainContainer(props) {
             filteredData={filteredData}
             handleSearch={handleSearch}
             breakpoints={breakpoints}
+            loading={loading}
+            loaderColor={loaderColor}
           />
         </Route>
         <Route exact path="/segments/:id">
-          <SegmentPosts breakpoints={breakpoints} segments={segments} />
+          <SegmentPosts
+            breakpoints={breakpoints}
+            segments={segments}
+            loading={loading}
+            loaderColor={loaderColor}
+          />
         </Route>
         <Route exact path="/users/:id">
           <OthersPosts segments={segments} breakpoints={breakpoints} />

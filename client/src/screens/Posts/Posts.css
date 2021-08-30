@@ -87,3 +87,7 @@
   margin-top: 10px;
   font-family: "Comfortaa", cursive;
 }
+
+.loader {
+  margin-top: 20vh;
+}

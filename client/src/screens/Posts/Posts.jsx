@@ -2,9 +2,24 @@ import { Link } from "react-router-dom";
 import "./Posts.css";
 import Masonry from "react-masonry-css";
 import Cards from "../Cards/Cards";
+import { css } from "@emotion/react";
+import Loader from "react-spinners/GridLoader";
+
+const override = css`
+  display: block;
+  margin: 0 auto;
+  border-color: red;
+`;
 
 export default function Posts(props) {
-  const { filteredData, segments, handleSearch, breakpoints } = props;
+  const {
+    filteredData,
+    segments,
+    handleSearch,
+    breakpoints,
+    loading,
+    loaderColor,
+  } = props;
 
   return (
     <section>
@@ -47,6 +62,14 @@ export default function Posts(props) {
             ))}
         </Masonry>
       </section>
+      <div className="loader">
+          <Loader
+            color={loaderColor}
+            loading={loading}
+            css={override}
+            size={50}
+          />
+        </div>
     </section>
   );
 }
