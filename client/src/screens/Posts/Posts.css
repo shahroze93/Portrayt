@@ -19,12 +19,18 @@
 .categoryBanner {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
   padding-right: 4vw;
   padding-left: 4vw;
   min-height: 50px;
   font-family: "Comfortaa", cursive;
+}
+
+.catOptions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .categoryHeader {
@@ -95,21 +101,24 @@
 @media screen and (max-width: 1024px) {
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 600px) {
   .categoryBanner {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: none;
     align-items: center;
     padding-right: 0vw;
     padding-left: 0vw;
     margin-bottom: 0px;
-    height: 40px;
+    /* height: 40px; */
   }
 
   .catOptions {
-    display: inline-flex;
-    padding-right: 5px;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    width: 100%;
+    justify-content: none;
     white-space: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -125,6 +134,10 @@
     margin-left: 10px;
   }
 
+  .searchBar {
+    margin-top: 5px;
+  }
+
   .searchBar[type="search"] {
     width: 20%;
     padding: 5px 5px 5px 32px;
@@ -132,7 +145,7 @@
   }
 
   .searchBar[type="search"]:focus {
-    width: 95%;
+    width: 80%;
   }
 
   .searchBar::placeholder {

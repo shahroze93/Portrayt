@@ -45,14 +45,6 @@ export default function Posts(props) {
         </div>
       </div>
       <hr />
-      <div className="loader">
-        <Loader
-          color={loaderColor}
-          loading={loading}
-          css={override}
-          size={50}
-        />
-      </div>
       <section className="masonGridContainer">
         <Masonry
           breakpointCols={breakpoints}
@@ -72,6 +64,14 @@ export default function Posts(props) {
             ))}
         </Masonry>
       </section>
+      <div className="loader">
+        <Loader
+          color={loaderColor}
+          loading={loading}
+          css={override}
+          size={50}
+        />
+      </div>
     </section>
   );
 }
