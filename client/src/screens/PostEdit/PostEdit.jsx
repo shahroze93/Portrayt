@@ -58,66 +58,96 @@ export default function PostEdit(props) {
     <section>
       <div className="newPostContainer">
         <div className="postTitle">{formData.name}</div>
-        <img className="postIMG" src={formData.img_url} alt={formData.name} />
-        <div className="postLink">{formData.link_url}</div>
-        <div className="postDesc">{formData.description}</div>
+        {formData.img_url ? (
+          <>
+            <div>
+              <img
+                className="postIMG"
+                src={formData.img_url}
+                alt={formData.name}
+              />
+            </div>
+          </>
+        ) : (
+          <>ENTER A TITLE OR IMAGE URL BELOW FOR A PREVIEW!</>
+        )}
+        <div className="detailDesc">{formData.description}</div>
+        {formData?.link_url && (
+          <div>
+            <a className="detailURL" href={formData?.link_url}>
+              Link to Website
+            </a>
+          </div>
+        )}
       </div>
       <br />
-      <form onSubmit={handleConfirm}>
-        <label>
-          Name:
+      <div className="inputForms">
+        <form onSubmit={handleConfirm}>
           <input
             type="text"
             name="name"
             value={formData.name}
+            placeholder="Post Title"
             onChange={handleChange}
+            className="w-9/12 border rounded-2xl py-3 px-3 border-green-400 placeholder-gray-500 
+            focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent m-3"
           />
-        </label>
-        <br />
-        <label>Category:</label>
-        <select value={selectedSegment} onChange={handleSegmentChange}>
-          <option disabled value="default">
-            All Categories
-          </option>
-          {segments?.map((segment) => (
-            <option value={segment.name} key={segment.id}>
-              {segment.name}
+          <br />
+          <select
+            value={selectedSegment}
+            placeholder="Category"
+            onChange={handleSegmentChange}
+            className="w-9/12 border rounded-2xl py-3 px-3 border-green-400 placeholder-gray-500 
+        focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent m-3"
+          >
+            <option disabled value="default">
+              All Categories
             </option>
-          ))}
-        </select>
-        <br />
-        <label>
-          Image URL:
+            {segments?.map((segment) => (
+              <option value={segment.name} key={segment.id}>
+                {segment.name}
+              </option>
+            ))}
+          </select>
+          <br />
           <input
             type="text"
             name="img_url"
             value={formData.img_url}
+            placeholder="Image URL"
             onChange={handleChange}
+            className="w-9/12 border rounded-2xl py-3 px-3 border-green-400 placeholder-gray-500 
+            focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent m-3"
           />
-        </label>
-        <br />
-        <label>
-          Link URL to Website (optional):
+          <br />
           <input
             type="text"
             name="link_url"
             value={formData.link_url}
+            placeholder="Link URL to Website (optional)"
             onChange={handleChange}
+            className="w-9/12 border rounded-2xl py-3 px-3 border-green-400 placeholder-gray-500 
+            focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent m-3"
           />
-        </label>
-        <br />
-        <label>
-          Description:
+          <br />
           <input
             type="text"
             name="description"
             value={formData.description}
+            placeholder="Description/Write up"
             onChange={handleChange}
+            className="w-9/12 border rounded-2xl py-3 px-3 border-green-400 placeholder-gray-500 
+            focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent m-3"
           />
-        </label>
-        <br />
-        <button>Submit</button>
-      </form>
+          <br />
+          <button className="w-5/12 bg-green-200 hover:bg-primary-green text-pri-teal hover:text-white font-bold py-2 px-4 rounded-full mb-5">
+            Submit
+          </button>
+          <button className="w-5/12 bg-green-200 hover:bg-red-400 text-pri-teal hover:text-white font-bold py-2 px-4 rounded-full mb-5">
+            Cancel
+          </button>
+        </form>
+      </div>
     </section>
   );
 }
