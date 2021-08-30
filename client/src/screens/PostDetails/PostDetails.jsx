@@ -137,7 +137,7 @@ export default function PostDetails(props) {
             Please login or sign up to comment
           </div>
         )}
-        {postData?.comments?.comment ? (
+        {postData?.comments?.length ? (
           <>
             <div>
               <button className="hideBtn" onClick={hideShow}>
