@@ -137,3 +137,18 @@
 .noLoginComment {
   margin-bottom: 15px;
 }
+
+.detailURL {
+  font-weight: bolder;
+  text-decoration: none;
+  list-style: none;
+  color: teal;
+  padding: 10px;
+  background-color: #a7f3d0;
+  border-radius: 30px;
+}
+
+.detailURL:hover {
+  background-color: #66cc75;
+  color: white;
+}

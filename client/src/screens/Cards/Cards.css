@@ -40,7 +40,7 @@
 .userNamePost {
   display: flex;
   margin-left: 10px;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 .cardUser {
@@ -55,6 +55,7 @@
 
 .cardName {
   font-size: 16px;
+  text-align: left;
 }
 
 .cardDesc {

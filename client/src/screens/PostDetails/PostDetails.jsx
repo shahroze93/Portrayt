@@ -104,28 +104,38 @@ export default function PostDetails(props) {
           alt={postData?.name}
         />
         <div className="detailDesc">{postData?.description}</div>
-        <div className="detailURL">{postData?.link_url}</div>
+        {postData?.link_url && (
+          <div className="mb-5">
+            <a className="detailURL" href={postData?.link_url}>
+              Link to Website
+            </a>
+          </div>
+        )}
       </div>
       <section className="commentContainer">
         <div className="commSectionHeader">Comments</div>
-        {currentUser ? (<>
-        <div id="newBox">
-          <CommentCreate
-            currentUser={currentUser}
-            handleCommCreate={handleCommCreate}
-            postData={postData}
-          />
-        </div>
-        <div id="editBox">
-          <CommentEdit
-            currentUser={currentUser}
-            handleCommEdit={handleCommEdit}
-            comment={comment}
-            switchBox0={switchBox0}
-          />
+        {currentUser ? (
+          <>
+            <div id="newBox">
+              <CommentCreate
+                currentUser={currentUser}
+                handleCommCreate={handleCommCreate}
+                postData={postData}
+              />
+            </div>
+            <div id="editBox">
+              <CommentEdit
+                currentUser={currentUser}
+                handleCommEdit={handleCommEdit}
+                comment={comment}
+                switchBox0={switchBox0}
+              />
+            </div>
+          </>
+        ) : (
+          <div className="noLoginComment">
+            Please login or sign up to comment
           </div>
-          </>) : (
-          <div className="noLoginComment">Please login or sign up to comment</div>
         )}
         <div>
           <button className="hideBtn" onClick={hideShow}>

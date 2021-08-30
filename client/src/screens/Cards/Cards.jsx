@@ -17,8 +17,8 @@ function Cards(props) {
           </div>
         ))}
         <div className="userNamePost">
-          <Link to={`/users/${post.user?.id}`}>
-            <div className="cardUser">{post.user?.username}</div>
+          <Link className="cardUser" to={`/users/${post.user?.id}`}>
+            {post.user?.username}
           </Link>
           <Link className="cardName" to={`/posts/${post.id}`}>
             {post.name}

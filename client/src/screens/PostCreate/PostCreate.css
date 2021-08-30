@@ -1,0 +1,28 @@
+.newPostContainer {
+  min-width: 400px;
+  max-width: 800px;
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  border: 0.5px solid #66cc75;
+  margin-top: 20px;
+  padding: 0px 50px 50px 50px;
+}
+
+.inputForms {
+  max-width: 800px;
+  margin: auto;
+}
+
+.postIMG {
+  max-width: 500px;
+  border-radius: 15px;
+  margin: auto;
+  border-radius: 30px;
+}
+
+.postTitle {
+  padding: 20px;
+  font-size: 20px;
+}
