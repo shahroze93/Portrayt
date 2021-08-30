@@ -175,4 +175,11 @@
 }
 
 @media only screen and (max-width: 400px) {
+  .detailBanner {
+    font-size: 12px;
+  }
+
+  .postContainer {
+    font-size: 12px;
+  }
 }
