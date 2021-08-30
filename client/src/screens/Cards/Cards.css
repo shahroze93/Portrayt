@@ -75,9 +75,9 @@
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 600px) {
   .cardImage {
-    max-width: 375px;
+    max-width: 100%;
     border-radius: 0px;
     margin: auto;
   }
@@ -90,7 +90,7 @@
     border-radius: 15px;
     padding: 0px 0px 10px 0px;
     margin: 10px 10px 10px;
-    width: 375px;
+    width: 100%;
     transition: all 0.25s ease-in-out;
     background-color: white;
     border: none;
