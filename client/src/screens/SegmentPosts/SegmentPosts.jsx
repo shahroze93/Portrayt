@@ -4,19 +4,11 @@ import { useParams } from "react-router";
 import { getOneSegment } from "../../services/segments";
 import Masonry from "react-masonry-css";
 import Cards from "../Cards/Cards";
-import { css } from "@emotion/react";
-import Loader from "react-spinners/GridLoader";
-
-const override = css`
-  display: block;
-  margin: 0 auto;
-  border-color: red;
-`;
 
 export default function SegmentPosts(props) {
   const [segData, setSegData] = useState(null);
   const { id } = useParams();
-  const { segments, breakpoints, loading, loaderColor } = props;
+  const { segments, breakpoints } = props;
 
   useEffect(() => {
     const fetchSegment = async () => {
@@ -80,14 +72,6 @@ export default function SegmentPosts(props) {
             ))}
         </Masonry>
       </section>
-      <div className="loader">
-        <Loader
-          color={loaderColor}
-          loading={loading}
-          css={override}
-          size={50}
-        />
-      </div>
     </section>
   );
 }

@@ -29,7 +29,7 @@ export default function MainContainer(props) {
       const postList = await getAllPosts();
       setPosts(postList);
       setFilteredData(postList);
-      setLoading(!loading);
+      setLoading((prevToggle) => !prevToggle);
     };
     fetchPosts();
   }, [toggle]);
@@ -38,7 +38,6 @@ export default function MainContainer(props) {
     const fetchSegments = async () => {
       const segmentList = await getAllSegments();
       setSegments(segmentList);
-      setLoading(!loading);
     };
     fetchSegments();
   }, []);
@@ -156,12 +155,7 @@ export default function MainContainer(props) {
           />
         </Route>
         <Route exact path="/segments/:id">
-          <SegmentPosts
-            breakpoints={breakpoints}
-            segments={segments}
-            loading={loading}
-            loaderColor={loaderColor}
-          />
+          <SegmentPosts breakpoints={breakpoints} segments={segments} />
         </Route>
         <Route exact path="/users/:id">
           <OthersPosts segments={segments} breakpoints={breakpoints} />
