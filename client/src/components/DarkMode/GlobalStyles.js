@@ -13,7 +13,7 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.text};
   }
 
-  .detailCreator, div.commSectionHeader, .commentsHeader, .currentUserTag,  .detailName, .detailDesc {
+  .detailCreator, div.commSectionHeader, .commentsHeader, .currentUserTag,  .detailName, .detailDesc, .commentContainer  {
   color: ${({ theme }) => theme.text};
   }
 
@@ -29,11 +29,23 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.fontblack};
   }
 
-  .cardContainer, .newPostContainer, .userPostDiv, .postContainer{
+  .cardContainer, .newPostContainer, .userPostDiv, .postContainer {
     background: ${({ theme }) => theme.cardbackground};
     color: ${({ theme }) => theme.text};
     border-color: ${({ theme }) => theme.toggleBorder};
     transition: all 0.50s linear;
+  }
+
+  div.bg-white {
+    background: ${({ theme }) => theme.cardbackground};
+  }
+
+  p.text-gray-600 {
+    color: ${({ theme }) => theme.text};
+  }
+
+  div.bg-primary-green {
+    background: ${({ theme }) => theme.cardbackground};
   }
 
   `;

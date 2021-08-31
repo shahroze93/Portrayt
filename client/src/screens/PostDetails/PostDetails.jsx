@@ -158,7 +158,7 @@ export default function PostDetails(props) {
             .slice(0)
             .reverse()
             .map((comment) => (
-              <div key={comment.id}>
+              <div key={comment.id} className="commentBox" >
                 <div className="bg-white max-w-md md:max-w-2xl m-auto rounded-2xl p-3  flex flex-col justify-center items-start shadow-lg mb-2">
                   <h3 className="text-primary-green font-semibold text-lg">
                     {comment?.user?.username}
