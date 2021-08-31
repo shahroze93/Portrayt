@@ -51,6 +51,7 @@ export default function MainContainer(props) {
   const handleDelete = async (id) => {
     await deletePost(id);
     setPosts((prevState) => prevState.filter((post) => post.id !== id));
+    setToggle((prevToggle) => !prevToggle);
   };
 
   const handleCommDelete = async (id) => {
