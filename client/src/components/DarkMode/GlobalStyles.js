@@ -29,7 +29,7 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.fontblack};
   }
 
-  .cardContainer, .newPostContainer, .userPostDiv, .postContainer {
+  .cardContainer, .newPostContainer, .userPostDiv, .postContainer, ul.links {
     background: ${({ theme }) => theme.cardbackground};
     color: ${({ theme }) => theme.text};
     border-color: ${({ theme }) => theme.toggleBorder};
