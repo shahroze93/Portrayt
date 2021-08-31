@@ -1,0 +1,24 @@
+.footer {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #66cc75;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  list-style: none;
+  padding: 10px;
+}
+@media screen and (max-width: 650px) {
+  .footer {
+    font-size: small;
+  }
+
+  .footer a {
+    font-size: small;
+  }
+}
