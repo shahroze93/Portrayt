@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import CategoryBanner from "../CategoryBanner/CategoryBanner";
 
 export default function PostEdit(props) {
   const [formData, setFormData] = useState({
@@ -56,6 +57,7 @@ export default function PostEdit(props) {
 
   return (
     <section>
+      <CategoryBanner segments={segments} />
       <div className="newPostContainer">
         <div className="postTitle">{formData.name}</div>
         {formData.img_url ? (

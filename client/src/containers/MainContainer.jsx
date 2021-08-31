@@ -175,6 +175,7 @@ export default function MainContainer(props) {
             handleDelete={handleDelete}
             currentUser={currentUser}
             newArray={newArray}
+            segments={segments}
           />
         </Route>
       </Switch>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./PostCreate.css";
+import CategoryBanner from "../CategoryBanner/CategoryBanner";
 
 export default function PostCreate(props) {
   const [formData, setFormData] = useState({
@@ -41,6 +42,7 @@ export default function PostCreate(props) {
 
   return (
     <section>
+      <CategoryBanner segments={segments} />
       <h3 className="segmentHeader">Create Post</h3>
       <div className="newPostContainer">
         <div className="postTitle">{formData.name}</div>

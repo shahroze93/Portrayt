@@ -5,6 +5,7 @@ import { useParams } from "react-router";
 import { getOnePost } from "../../services/posts";
 import CommentCreate from "../CommentCreate/CommentCreate";
 import CommentEdit from "../CommentEdit.jsx/CommentEdit";
+import CategoryBanner from "../CategoryBanner/CategoryBanner";
 
 export default function PostDetails(props) {
   const [postData, setPostData] = useState(null);
@@ -57,22 +58,7 @@ export default function PostDetails(props) {
 
   return (
     <section>
-      <hr />
-      <div className="categoryBanner">
-        <div className="catOptions">
-          <Link className="catLink" to={`/`}>
-            <div className="categoryHeader">Discover</div>
-          </Link>
-          {segments.map((segment) => (
-            <div key={segment.id}>
-              <Link className="catLink" to={`/segments/${segment.id}`}>
-                <div className="categoryHeader">{segment.name}</div>
-              </Link>
-            </div>
-          ))}
-        </div>
-      </div>
-      <hr />
+      <CategoryBanner segments={segments} />
       <div className="postContainer">
         <div className="detailBanner">
           <Link className="detailCreator" to={`/users/${postData?.user?.id}`}>

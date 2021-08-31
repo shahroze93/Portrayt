@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import "./UserPosts.css";
+import CategoryBanner from "../CategoryBanner/CategoryBanner";
 
 export default function UserPosts(props) {
-  const { handleDelete, currentUser, newArray } = props;
+  const { handleDelete, currentUser, newArray, segments } = props;
 
   const confirmDelete = async (id) => {
     let entry = prompt(
@@ -23,7 +24,7 @@ export default function UserPosts(props) {
 
   return (
     <div>
-      <hr />
+      <CategoryBanner segments={segments} />
       <h3 className="segmentHeader">My Posts</h3>
       <br />
       <Link className="navOption" to={`/edit-account`}>

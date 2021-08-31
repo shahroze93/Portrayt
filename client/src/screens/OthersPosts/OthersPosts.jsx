@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { getOneUser } from "../../services/users";
 import Cards from "../Cards/Cards";
 import Masonry from "react-masonry-css";
+import CategoryBanner from "../CategoryBanner/CategoryBanner";
 
 export default function OthersPosts(props) {
   const [customerData, setCustomerData] = useState(null);
@@ -20,20 +20,7 @@ export default function OthersPosts(props) {
 
   return (
     <section>
-      <hr />
-      <div className="categoryBanner">
-        <Link className="catLink" to={`/`}>
-          <div className="categoryHeader">Discover</div>
-        </Link>
-        {segments.map((segment) => (
-          <div key={segment.id}>
-            <Link className="catLink" to={`/segments/${segment.id}`}>
-              <div className="categoryHeader">{segment.name}</div>
-            </Link>
-          </div>
-        ))}
-      </div>
-      <hr />
+    <CategoryBanner segments={segments} />
       <h1 className="segmentHeader">{customerData?.username}</h1>
       <section className="masonGridContainer">
         <Masonry
