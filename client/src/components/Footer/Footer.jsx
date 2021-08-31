@@ -7,9 +7,9 @@ function Footer(props) {
   return (
     <footer className="footer">
       <p>©Portrayt - Shahroze Husain 2021</p>
-      <button href="https://www.linkedin.com/in/shahrozehusain">
+      <a href="https://www.linkedin.com/in/shahrozehusain">
         Linkedin
-      </button>
+      </a>
       <button onClick={themeToggler}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
