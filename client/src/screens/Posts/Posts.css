@@ -106,7 +106,6 @@
     display: flex;
     flex-direction: column;
     justify-content: none;
-    align-items: center;
     padding-right: 0vw;
     padding-left: 0vw;
     margin-bottom: 0px;
@@ -115,7 +114,7 @@
   .catOptions {
     display: flex;
     flex-direction: row;
-    padding: 6px;
+    padding: 10px;
     margin-left: 10px;
     width: 100%;
     justify-content: none;
