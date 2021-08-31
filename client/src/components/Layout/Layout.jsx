@@ -18,7 +18,11 @@ export default function Layout(props) {
       <>
         <GlobalStyles />
         <header>
-          <Nav currentUser={currentUser} handleLogout={handleLogout} />
+          <Nav
+            currentUser={currentUser}
+            handleLogout={handleLogout}
+            themeToggler={themeToggler}
+          />
           {props.children}
         </header>
         <Footer themeToggler={themeToggler} />

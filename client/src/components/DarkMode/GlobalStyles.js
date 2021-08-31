@@ -29,18 +29,23 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.fontblack};
   }
 
-  .cardContainer, .newPostContainer, .userPostDiv, .postContainer, ul.links {
+  .cardContainer, .newPostContainer, .userPostDiv, .postContainer {
     background: ${({ theme }) => theme.cardbackground};
     color: ${({ theme }) => theme.text};
     border-color: ${({ theme }) => theme.toggleBorder};
     transition: all 0.50s linear;
   }
 
+  ul.links {
+    background: ${({ theme }) => theme.navbar};
+  }
+
+
   div.bg-white {
     background: ${({ theme }) => theme.cardbackground};
   }
 
-  p.text-gray-600 {
+  p.text-gray-600, svg {
     color: ${({ theme }) => theme.text};
   }
 
