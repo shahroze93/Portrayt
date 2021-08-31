@@ -1,50 +1,39 @@
-import { createGlobalStyle} from "styled-components"
+import { createGlobalStyle } from "styled-components";
 export const GlobalStyles = createGlobalStyle`
   body {
     background: ${({ theme }) => theme.body};
-    color: ${({ theme }) => theme.text};
-    font-family: Roboto, sans-serif;
     transition: all 0.50s linear;
   }
 
-  .nav, .footer {
+  .nav, .footer, .categoryBanner {
     background: ${({ theme }) => theme.navbar};
   }
 
-  .customerBox {
-    background: ${({ theme }) => theme.customerBox};
+  .navOption, .userLink {
+    color: ${({ theme }) => theme.text};
   }
 
-  h3, a {
-    color: ${({ theme }) => theme.headers};
-  }
-
-  .commLinks {
-    color: ${({ theme }) => theme.comLinks}
-  }
-
-  h2, h1 {
-    color: ${({ theme }) => theme.headers2};
-  }  
-
-  .searchLabel {
-    color: ${({ theme }) => theme.headers};
-  }
-
-  .commFormLabel {
+  .detailCreator, div.commSectionHeader, .commentsHeader, .currentUserTag,  .detailName, .detailDesc {
   color: ${({ theme }) => theme.text};
   }
 
-  .comms:hover {
-  background: ${({ theme }) => theme.contentBox};
+  .categoryHeader, h1.segmentHeader, h3.segmentHeader {
+    color: ${({ theme }) => theme.text};
   }
 
-  .contacts:hover {
-  background: ${({ theme }) => theme.contentBox};
+  .cardName {
+    color: ${({ theme }) => theme.cardName};
   }
 
-  .comms {
-  background: ${({ theme }) => theme.body};
+  .cardCategory {
+    color: ${({ theme }) => theme.fontblack};
   }
 
-  `
+  .cardContainer, .newPostContainer, .userPostDiv, .postContainer{
+    background: ${({ theme }) => theme.cardbackground};
+    color: ${({ theme }) => theme.text};
+    border-color: ${({ theme }) => theme.toggleBorder};
+    transition: all 0.50s linear;
+  }
+
+  `;
