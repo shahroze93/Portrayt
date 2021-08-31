@@ -1,13 +1,18 @@
-import './App.css';
-import { useState, useEffect } from 'react';
-import { Switch, Route, useHistory } from 'react-router-dom';
-import { loginUser, registerUser, verifyUser, removeToken } from './services/auth';
-import { deleteUser } from './services/users';
-import Layout from './components/Layout/Layout';
-import Login from './screens/SignIn/SignIn';
-import SignUp from './screens/SignUp/SignUp';
-import MainContainer from './containers/MainContainer';
-import EditAccount from './screens/EditAccount/EditAccount';
+import "./App.css";
+import { useState, useEffect } from "react";
+import { Switch, Route, useHistory } from "react-router-dom";
+import {
+  loginUser,
+  registerUser,
+  verifyUser,
+  removeToken,
+} from "./services/auth";
+import { deleteUser } from "./services/users";
+import Layout from "./components/Layout/Layout";
+import Login from "./screens/SignIn/SignIn";
+import SignUp from "./screens/SignUp/SignUp";
+import MainContainer from "./containers/MainContainer";
+import EditAccount from "./screens/EditAccount/EditAccount";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -24,52 +29,61 @@ function App() {
   const handleLogin = async (loginData) => {
     const userData = await loginUser(loginData);
     setCurrentUser(userData);
-    history.push('/');
+    history.push("/");
   };
 
   const handleSignUp = async (signupData) => {
     const userData = await registerUser(signupData);
     setCurrentUser(userData);
-    history.push('/');
+    history.push("/");
   };
-  
+
   const handleLogout = () => {
-    setCurrentUser(null);
-    localStorage.removeItem('authToken');
-    removeToken();
-    history.push('/');
+    if (window.confirm("Confirm Logout?")) {
+      setCurrentUser(null);
+      localStorage.removeItem("authToken");
+      removeToken();
+      history.push("/");
+    } 
   };
 
   const userDelete = async () => {
-    let entry = prompt("Please enter email address to confirm account deletion:", "");
+    let entry = prompt(
+      "Please enter email address to confirm account deletion:",
+      ""
+    );
     if (entry === null || entry === "") {
-      alert("NO INPUT - DELETION CANCELLED")
+      alert("NO INPUT - DELETION CANCELLED");
     } else if (entry === currentUser.email) {
-      alert("DELETION COMPLETE")
+      alert("DELETION COMPLETE");
       await deleteUser(currentUser.id);
       setCurrentUser(null);
-      localStorage.removeItem('authToken');
+      localStorage.removeItem("authToken");
       removeToken();
-      history.push('/');
+      history.push("/");
     } else {
-      alert("INCORRECT ENTRY - TRY AGAIN TO CONFIRM")
+      alert("INCORRECT ENTRY - TRY AGAIN TO CONFIRM");
     }
-  }
+  };
 
   return (
     <div className="App">
-      <Layout currentUser={currentUser} handleLogout={handleLogout} userDelete={userDelete}>
+      <Layout
+        currentUser={currentUser}
+        handleLogout={handleLogout}
+        userDelete={userDelete}
+      >
         <Switch>
-          <Route path='/login'>
+          <Route path="/login">
             <Login handleLogin={handleLogin} />
           </Route>
-          <Route path='/signup'>
+          <Route path="/signup">
             <SignUp handleSignUp={handleSignUp} />
           </Route>
-          <Route path='/edit-account'>
+          <Route path="/edit-account">
             <EditAccount currentUser={currentUser} userDelete={userDelete} />
           </Route>
-          <Route path='/'>
+          <Route path="/">
             <MainContainer currentUser={currentUser} />
           </Route>
         </Switch>
