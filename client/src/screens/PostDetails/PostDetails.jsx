@@ -163,7 +163,7 @@ export default function PostDetails(props) {
                   <h3 className="text-primary-green font-semibold text-lg">
                     {comment?.user?.username}
                   </h3>
-                  <p className="text-gray-600 text-lg ">{comment.content}</p>
+                  <p className="text-gray-600 text-sm ">{comment.content}</p>
                 </div>
                 {currentUser?.id === comment.user_id && (
                   <div className="max-w-md md:max-w-2xl m-auto flex justify-end mb-2">

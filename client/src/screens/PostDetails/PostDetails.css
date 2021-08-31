@@ -49,6 +49,10 @@
 .detailDesc {
   margin-top: 10px;
   padding-bottom: 20px;
+  text-align: justify;
+  width: 80%;
+  margin: auto;
+  margin-top: 5px;
 }
 
 .detailImage {
@@ -167,6 +171,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     width: 90%;
     margin: auto;
     font-size: 16px;
@@ -177,6 +182,13 @@
 @media only screen and (max-width: 600px) {
   .postContainer {
     max-width: 100%;
+  }
+
+  .detailDesc {
+    max-width: 90%;
+    margin: auto;
+    text-align: justify;
+    margin-top: 5px;
   }
 
   .detailImage {
