@@ -26,7 +26,7 @@ export default function Layout(props) {
           />
           {props.children}
         </header>
-        <FloatingBanner />
+        <FloatingBanner currentUser={currentUser} />
         <Footer themeToggler={themeToggler} />
       </>
     </ThemeProvider>
