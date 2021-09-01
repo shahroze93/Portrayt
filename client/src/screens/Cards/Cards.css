@@ -68,6 +68,7 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+/* as descriptions can get very long I was able to learn abut a webkit called line clamp that will limit the number of lines shown and add an ellipsis to the end. assistance taken from -> https://css-tricks.com/almanac/properties/l/line-clamp/ */
 
 @media screen and (max-width: 1024px) {
   .cardCategory {

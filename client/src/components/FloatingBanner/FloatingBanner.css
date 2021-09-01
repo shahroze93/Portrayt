@@ -1,0 +1,33 @@
+.floatingBanner {
+  bottom: 40px;
+  position: fixed;
+  display: none;
+}
+
+.floatingBtnContainer {
+  padding: 10px;
+  background-color: #d1fae5;
+  border-radius: 30px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.floatBtn {
+  padding: 10px;
+}
+
+@media screen and (max-width: 650px) {
+  .floatingBanner {
+    display: block;
+  }
+
+  .floatingBtnContainer {
+    padding: 0px;
+  }
+
+  .floatBtn svg.h-6 {
+    font-size: small;
+    padding: 2px;
+  }
+}

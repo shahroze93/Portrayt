@@ -46,6 +46,7 @@ function App() {
       history.push("/");
     } 
   };
+  // wanted to add in a way to prevent users from logging out by mistake which is a feature in many common apps and one method I found was window.confirm. I learnt about it from here -> https://stackoverflow.com/questions/63311845/unexpected-use-of-confirm-no-restricted-globals
 
   const userDelete = async () => {
     let entry = prompt(

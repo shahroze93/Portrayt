@@ -5,6 +5,7 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "../DarkMode/GlobalStyles";
 import { lightTheme, darkTheme } from "../DarkMode/Themes";
 import { useState } from "react";
+import FloatingBanner from "../FloatingBanner/FloatingBanner";
 
 export default function Layout(props) {
   const { currentUser, handleLogout } = props;
@@ -25,6 +26,7 @@ export default function Layout(props) {
           />
           {props.children}
         </header>
+        <FloatingBanner />
         <Footer themeToggler={themeToggler} />
       </>
     </ThemeProvider>

@@ -75,3 +75,5 @@ export default function Posts(props) {
     </section>
   );
 }
+
+// to arrange the posts in the app to show the latest to oldest I needed to sort through the data to arrange by the latest id to the oldest - assistance was taken from ->https://stackoverflow.com/questions/51219133/how-to-sort-a-map-by-a-specific-field-in-es6-react/51219236
