@@ -48,12 +48,12 @@ post3 = Post.create!(name: "Sunny Living",
 img_url: "https://photo2.dwellinggawker.com/wp-content/uploads/2021/08/86097.jpg",
 link_url: "https://www.danslelakehouse.com/2021/07/summer-tablescape-with-loom-table.html",
 description: "Easy summer tablescape with affordable and custom table linens - in ANY size!",
-user: @tester)
+user: @test1)
 post4 = Post.create!(name: "Its all about happiness", 
 img_url: "https://photo.dwellinggawker.com/wp-content/uploads/2021/08/86073.jpg",
 link_url: "",
 description: "Two backyards, beautiful garden and a lot of good memories: this is Vavina's house! Check it out.",
-user: @tester)
+user: @test1)
 post5 = Post.create!(name: "Home & Astrology", 
 img_url: "https://photo.dwellinggawker.com/wp-content/uploads/2021/07/86057.jpg",
 link_url: "",
@@ -128,12 +128,12 @@ post19 = Post.create!(name: "A Sunny Welcome",
 img_url: "https://craftsbyamanda.com/wp-content/uploads/2021/08/sunflower-wreath-RC-SQ-768x768.jpg",
 link_url: "",
 description: "Sunflower Wreath that I made over the weekend",
-user: @tester)
+user: @test8)
 post20 = Post.create!(name: "Cute Fox Planters", 
 img_url: "https://www.thecrafttrain.com/wp-content/uploads/2020/11/woodland-animal-planters-square.jpg",
 link_url: "",
 description: "woodland animal plastic bottle planters",
-user: @tester)
+user: @test10)
 post21 = Post.create!(name: "Rustic Bath", 
 img_url: "https://i.pinimg.com/564x/72/0f/30/720f30c50a093711c4f3a78c0c657e98.jpg",
 link_url: "",
@@ -144,7 +144,7 @@ name: "Mesmerizing Mauve",
 img_url: "https://1.bp.blogspot.com/-BSchmWTj8t0/XWtXm_3sN6I/AAAAAAAALKM/cdV7qYgLp9cI-ertmuEe51XiH6SNGA4WQCLcBGAs/s400/DSC07711-1_edited-1.jpg",
 link_url: "",
 description: "Mesmerizing Mauve is a dusty mauve creme from the Wrapped In Mystery Fall 2019 Collection from Artistic Nail Design. The collection is inspired by every woman's need to find their own version of glam.",
-user: @est8)
+user: @test8)
 post23 = Post.create!(
 name: "Rustic", 
 img_url: "https://i.pinimg.com/564x/72/0f/30/720f30c50a093711c4f3a78c0c657e98.jpg",
@@ -348,13 +348,13 @@ name: "",
 img_url: "https://photo2.dwellinggawker.com/wp-content/uploads/2021/08/86063.jpg",
 link_url: "",
 description: "I Could Stare At This Home All Day",
-user: @tes11)
+user: @test11)
 post56 = Post.create!(
 name: "", 
 img_url: "https://photo2.dwellinggawker.com/wp-content/uploads/2021/08/86063.jpg",
 link_url: "",
 description: "I Could Stare At This Home All Day",
-user: @tes11)
+user: @test11)
 
 puts "#{Post.count} posts created"
 
@@ -425,7 +425,7 @@ comment1 = Comment.create!(content: 'Cool', user: @test5)
 comment2 = Comment.create!(content: 'Pretty', user: @test5)
 comment3 = Comment.create!(content: 'Neat', user: @test5)
 comment4 = Comment.create!(content: 'Nice', user: @test5)
-comment5 = Comment.create!(content: 'OMG', user: @tester)
+comment5 = Comment.create!(content: 'OMG', user: @test10)
 comment6 = Comment.create!(content: 'Its great!', user: @test1)
 comment7 = Comment.create!(content: 'Love it', user: @test1)
 comment8 = Comment.create!(content: 'Good', user: @test7)
