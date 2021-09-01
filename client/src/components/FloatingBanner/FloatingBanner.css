@@ -1,5 +1,5 @@
 .floatingBanner {
-  bottom: 5px;
+  bottom: 15px;
   position: fixed;
   display: none;
 }
