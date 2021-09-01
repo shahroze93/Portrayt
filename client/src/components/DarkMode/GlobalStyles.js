@@ -53,4 +53,7 @@ export const GlobalStyles = createGlobalStyle`
     background: ${({ theme }) => theme.cardbackground};
   }
 
+  .floatBtn svg.h-6 {
+    color: ${({ theme }) => theme.fontblack};
+  }
   `;
