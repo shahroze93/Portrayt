@@ -17,6 +17,10 @@
 
 <br>
 
+## Website Demo Link
+
+https://portrayt.netlify.app/
+
 ## Overview
 
 Portrayt is a full stack social media application that allows users to post and share media content focused on home decor and style. Authorized users have the ability to create, read, update and delete posts which are associated with their own accounts. Portrayt uses Ruby on Rails and PostgreSQL on the backend, and React.js on the frontend with bcrypt and jwt token for authentication.
@@ -172,40 +176,39 @@ src
 
 | Component                                  | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------------------------------ | :------: | :------------: | :-----------: | :---------: |
-| Backend CRUD                               |    M     |     4 hrs      |      6hrs      |   N/A hrs   |
-| Backend Auth                               |    M     |     2 hrs      |      2hrs      |   N/A hrs   |
-| Seed DB                                    |    M     |     2 hrs      |      3hrs      |   N/A hrs   |
-| create frontend component structure        |    M     |     1 hrs      |      1hrs      |   N/A hrs   |
-| frontend CRUD                              |    H     |     4 hrs      |      6hrs      |   N/A hrs   |
-| create routes                              |    M     |     2 hrs      |      1hrs      |   N/A hrs   |
-| create homepage screen                     |    M     |     2 hrs      |      2hrs      |   N/A hrs   |
-| create footer screen                       |    M     |     1 hrs      |      0.5hrs      |   N/A hrs   |
-| create navbar screen                       |    M     |     1 hrs      |      1hrs      |   N/A hrs   |
-| create edit user                           |    M     |     2 hrs      |      1hrs      |   N/A hrs   |
-| create CreatePost page                     |    M     |     2 hrs      |      2hrs      |   N/A hrs   |
-| create EditPost page                       |    M     |     2 hrs      |      2hrs      |   N/A hrs   |
-| create PostDetails page                    |    M     |     2 hrs      |      3hrs      |   N/A hrs   |
-| create user created posts page             |    M     |     2 hrs      |      1hrs      |   N/A hrs   |
-| create user sign-in/login screens          |    M     |     2 hrs      |      1hrs      |   N/A hrs   |
-| Basic CSS                                  |    M     |     3 hrs      |      2hrs      |   N/A hrs   |
-| Advanced CSS Navbar/Footer                 |    M     |     1 hrs      |      2hrs      |   N/A hrs   |
-| Advanced CSS Homepage                      |    M     |     2 hrs      |      2hrs      |   N/A hrs   |
-| Advanced CSS UserPosts                     |    M     |     1 hrs      |      1hrs      |   N/A hrs   |
-| Advanced CSS PostDetails                   |    M     |     2 hrs      |      4hrs      |   N/A hrs   |
-| Advanced CSS Login/SignUp/EditAccount      |    M     |     1 hrs      |      2hrs      |   N/A hrs   |
-| Advance styling for css(flexbox) or (grid) |    M     |     3 hrs      |      3hrs      |   N/A hrs   |
-| Add media query for forms                  |    M     |     2 hrs      |      4hrs      |   N/A hrs   |
-| Add media query for Homepage               |    M     |      2hrs      |      1hrs      |   N/A hrs   |
-| Add media query for PostDetails            |    M     |     2 hrs      |      2hrs      |   N/A hrs   |
-| Add media query for UserPosts              |    M     |     2 hrs      |      1hrs      |   N/A hrs   |
-| Debugging Backend (including PMVP)                          |    H     |     3 hrs      |      8hrs      |   N/A hrs   |
-| Debugging Fullstack (including PMVP)                        |    H     |     3 hrs      |      8hrs      |   N/A hrs   |
-| PMVP - create Comments component(CRUD)            |    H     |     3 hrs      |      3hrs      |   N/A hrs   |
-| PMVP - DarkMode |   M     |     2 hrs      |      2hrs      |   N/A hrs   |
-| PMVP - Search Function |    M     |     2 hrs      |      1hrs      |   N/A hrs   |
-| PMVP - posts by other users |    M     |     2 hrs      |      2hrs      |   N/A hrs   |
-
-| Total                                      |   ---    |     61 hrs     |      71.5hrs      |     hrs     |
+| Backend CRUD                               |    M     |     4 hrs      |      6hrs      |   6 hrs   |
+| Backend Auth                               |    M     |     2 hrs      |      2hrs      |   2 hrs   |
+| Seed DB                                    |    M     |     2 hrs      |      3hrs      |   3 hrs   |
+| create frontend component structure        |    M     |     1 hrs      |      1hrs      |   1 hrs   |
+| frontend CRUD                              |    H     |     4 hrs      |      6hrs      |   6 hrs   |
+| create routes                              |    M     |     2 hrs      |      1hrs      |   1 hrs   |
+| create homepage screen                     |    M     |     2 hrs      |      2hrs      |   2 hrs   |
+| create footer screen                       |    M     |     1 hrs      |      0.5hrs    |   0.5 hrs   |
+| create navbar screen                       |    M     |     1 hrs      |      1hrs      |   1 hrs   |
+| create edit user                           |    M     |     2 hrs      |      1hrs      |   1 hrs   |
+| create CreatePost page                     |    M     |     2 hrs      |      2hrs      |   2 hrs   |
+| create EditPost page                       |    M     |     2 hrs      |      2hrs      |   2 hrs   |
+| create PostDetails page                    |    M     |     2 hrs      |      3hrs      |   3 hrs   |
+| create user created posts page             |    M     |     2 hrs      |      1hrs      |   1 hrs   |
+| create user sign-in/login screens          |    M     |     2 hrs      |      1hrs      |   1 hrs   |
+| Basic CSS                                  |    M     |     3 hrs      |      2hrs      |   2 hrs   |
+| Advanced CSS Navbar/Footer                 |    M     |     1 hrs      |      2hrs      |   2 hrs   |
+| Advanced CSS Homepage                      |    M     |     2 hrs      |      2hrs      |   2 hrs   |
+| Advanced CSS UserPosts                     |    M     |     1 hrs      |      1hrs      |   1 hrs   |
+| Advanced CSS PostDetails                   |    M     |     2 hrs      |      4hrs      |   4 hrs   |
+| Advanced CSS Login/SignUp/EditAccount      |    M     |     1 hrs      |      2hrs      |   2 hrs   |
+| Advance styling for css(flexbox) or (grid) |    M     |     3 hrs      |      3hrs      |   3 hrs   |
+| Add media query for forms                  |    M     |     2 hrs      |      4hrs      |   4 hrs   |
+| Add media query for Homepage               |    M     |      2hrs      |      1hrs      |   1 hrs   |
+| Add media query for PostDetails            |    M     |     2 hrs      |      2hrs      |   2 hrs   |
+| Add media query for UserPosts              |    M     |     2 hrs      |      1hrs      |   1 hrs   |
+| Debugging Backend (including PMVP)         |    H     |     3 hrs      |      8hrs      |   8 hrs   |
+| Debugging Fullstack (including PMVP)       |    H     |     3 hrs      |      8hrs      |   8 hrs   |
+| PMVP - create Comments component(CRUD)     |    H     |     3 hrs      |      3hrs      |   3 hrs   |
+| PMVP - DarkMode                            |    M     |     2 hrs      |      2hrs      |   2 hrs   |
+| PMVP - Search Function                     |    M     |     2 hrs      |      1hrs      |   1 hrs   |
+| PMVP - posts by other users                |    M     |     2 hrs      |      2hrs      |   2 hrs   |
+| Total                                      |   ---    |     61 hrs     |      71.5hrs   |   71.5  hrs   |
 
 <br>
 
