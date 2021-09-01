@@ -13,6 +13,7 @@ import Login from "./screens/SignIn/SignIn";
 import SignUp from "./screens/SignUp/SignUp";
 import MainContainer from "./containers/MainContainer";
 import EditAccount from "./screens/EditAccount/EditAccount";
+import ScrollToTop from "./utilities/ScrollToTop";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -74,6 +75,7 @@ function App() {
         handleLogout={handleLogout}
         userDelete={userDelete}
       >
+        <ScrollToTop>
         <Switch>
           <Route path="/login">
             <Login handleLogin={handleLogin} />
@@ -87,7 +89,8 @@ function App() {
           <Route path="/">
             <MainContainer currentUser={currentUser} />
           </Route>
-        </Switch>
+          </Switch>
+          </ScrollToTop>
       </Layout>
     </div>
   );

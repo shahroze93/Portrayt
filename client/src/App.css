@@ -4,6 +4,11 @@
   font-size: 16px;
 }
 
+/* this ensures that page heights are 100vh minimum so footer stays in the bottom of page */
 header {
   min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
 }
