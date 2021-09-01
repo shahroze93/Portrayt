@@ -381,3 +381,33 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
 ```
+The final and biggest challenge I faced was adding segments(in other words categories) into the user. This required extensive work starting from the controller, services, routes, main container, and the create page.
+
+To summarize the solution, although I am taking the inputs for both post and category in the create post screen, when the form is submitted the code will run and first create a post because a post must exist for a category to be assigned to a post. Then the segment/category is added to the post using the ids of the post and the id of the category. With the jointable that was set up this ultimately creates the connect between the post and the category tables so that if I want to see posts by a category like Home Decor I will see only posts by Home Decor.
+
+Alot of coding was done but below are some of the main samples of code which I used to solve the issue:
+
+```
+  -CreatePost Screen
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const category = segments.find(
+      (segment) => segment.name === selectedSegment
+    );
+    handleCreate(formData, category.id);
+  };
+
+  -MainContainer
+  const handleCreate = async (formData, segmentId) => {
+    const postData = await postPost(formData);
+    setPosts((prevState) => [...prevState, postData]);
+    handleSegmentAdd(segmentId, postData.id);
+  };
+
+  -services
+  export const addSegmentToPost = async (segmentId, postId) => {
+  const resp = await api.put(`/segments/${segmentId}/posts/${postId}`);
+  return resp.data;
+};
+```
+A similar solution as above was used to also handle the update post function to enable changing of categories when updating.
