@@ -64,9 +64,9 @@ export default function MainContainer(props) {
     setPosts((prevState) =>
       prevState.map((post) => {
         return post.id === Number(id) ? postData : post;
-      }));
+      })
+    );
     handleSegmentAdd(segmentId, postData.id);
-    console.log(segmentId)
     setToggle((prevToggle) => !prevToggle);
     history.push("/");
   };
@@ -108,9 +108,9 @@ export default function MainContainer(props) {
     });
     setFilteredData(result);
   };
-// added function for searching through the data so that users can search by post name, assistance taken from -> https://levelup.gitconnected.com/how-to-search-filter-through-data-in-react-26f1545fe3a1
-// because the filter method is case sensitive, I was able to find a fix by using the toLowerCase method that ensures that all search terms no matter the case would work, assistance taken from -> https://stackoverflow.com/questions/37425650/search-text-no-matter-if-is-in-lower-or-upper-case/37425707
-  
+  // added function for searching through the data so that users can search by post name, assistance taken from -> https://levelup.gitconnected.com/how-to-search-filter-through-data-in-react-26f1545fe3a1
+  // because the filter method is case sensitive, I was able to find a fix by using the toLowerCase method that ensures that all search terms no matter the case would work, assistance taken from -> https://stackoverflow.com/questions/37425650/search-text-no-matter-if-is-in-lower-or-upper-case/37425707
+
   // code to only return the posts by the currentUser only
   const [newArray, setNewArray] = useState([]);
   useEffect(() => {
