@@ -282,7 +282,7 @@ name: "Sunflower Patchwork",
 img_url: "https://www.everythingcrossstitch.com/images/product/responsive/79860.jpg",
 link_url: "",
 description: "",
-user: @)
+user: @test14)
 post46 = Post.create!(
 name: "Cardinal Basket", 
 img_url: "https://www.everythingcrossstitch.com/images/product/responsive/2961.jpg?",
