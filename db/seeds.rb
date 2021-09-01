@@ -349,12 +349,6 @@ img_url: "https://photo2.dwellinggawker.com/wp-content/uploads/2021/08/86063.jpg
 link_url: "",
 description: "I Could Stare At This Home All Day",
 user: @test11)
-post56 = Post.create!(
-name: "", 
-img_url: "https://photo2.dwellinggawker.com/wp-content/uploads/2021/08/86063.jpg",
-link_url: "",
-description: "I Could Stare At This Home All Day",
-user: @test11)
 
 puts "#{Post.count} posts created"
 
