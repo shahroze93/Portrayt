@@ -10,9 +10,9 @@ function Footer(props) {
       <a href="https://www.linkedin.com/in/shahrozehusain">
         Linkedin
       </a>
-      <a href="https://github.com/shahroze93?tab=repositories">
+      {/* <a href="https://github.com/shahroze93?tab=repositories">
         github
-      </a>
+      </a> */}
       <button onClick={themeToggler}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
