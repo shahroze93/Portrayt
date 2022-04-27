@@ -9,7 +9,12 @@ function Cards(props) {
     <div className="cardContainer">
       <div className="cardInfo">
         <Link to={`/posts/${post.id}`}>
-          <img className="cardImage" src={post.img_url} alt={post.name} />
+          <img
+            loading="lazy"
+            className="cardImage"
+            src={post.img_url}
+            alt={post.name}
+          />
         </Link>
         {post?.segments?.map((segment) => (
           <div className="cardCategory" key={segment.id}>
