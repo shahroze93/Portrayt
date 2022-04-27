@@ -13,6 +13,10 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.text};
   }
 
+  .toggleButton {
+    background: ${({ theme }) => theme.darkmodetoggle};
+  }
+
   .detailCreator, div.commSectionHeader, .commentsHeader, .currentUserTag,  .detailName, .detailDesc, .commentContainer  {
   color: ${({ theme }) => theme.text};
   }
