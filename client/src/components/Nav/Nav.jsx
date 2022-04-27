@@ -10,7 +10,7 @@ export default function Nav(props) {
       <nav className="nav">
         <input id="nav-toggle" type="checkbox" />
         <div className="logoBox">
-          <Link className="logoLink" to="/">
+          <Link rel="preload" className="logoLink" to="/">
             PORTRAYT
           </Link>
           {currentUser && (
