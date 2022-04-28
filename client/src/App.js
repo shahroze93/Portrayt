@@ -15,6 +15,8 @@ import MainContainer from "./containers/MainContainer";
 import EditAccount from "./screens/EditAccount/EditAccount";
 import ScrollToTop from "./utilities/ScrollToTop";
 
+let now = new Date().getHours();
+
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const history = useHistory();
@@ -45,7 +47,7 @@ function App() {
       localStorage.removeItem("authToken");
       removeToken();
       history.push("/");
-    } 
+    }
   };
   // wanted to add in a way to prevent users from logging out by mistake which is a feature in many common apps and one method I found was window.confirm. I learnt about it from here -> https://stackoverflow.com/questions/63311845/unexpected-use-of-confirm-no-restricted-globals
 
@@ -71,26 +73,27 @@ function App() {
   return (
     <div className="App">
       <Layout
+        now={now}
         currentUser={currentUser}
         handleLogout={handleLogout}
         userDelete={userDelete}
       >
         <ScrollToTop>
-        <Switch>
-          <Route path="/login">
-            <Login handleLogin={handleLogin} />
-          </Route>
-          <Route path="/signup">
-            <SignUp handleSignUp={handleSignUp} />
-          </Route>
-          <Route path="/edit-account">
-            <EditAccount currentUser={currentUser} userDelete={userDelete} />
-          </Route>
-          <Route path="/">
-            <MainContainer currentUser={currentUser} />
-          </Route>
+          <Switch>
+            <Route path="/login">
+              <Login handleLogin={handleLogin} />
+            </Route>
+            <Route path="/signup">
+              <SignUp handleSignUp={handleSignUp} />
+            </Route>
+            <Route path="/edit-account">
+              <EditAccount currentUser={currentUser} userDelete={userDelete} />
+            </Route>
+            <Route path="/">
+              <MainContainer currentUser={currentUser} />
+            </Route>
           </Switch>
-          </ScrollToTop>
+        </ScrollToTop>
       </Layout>
     </div>
   );

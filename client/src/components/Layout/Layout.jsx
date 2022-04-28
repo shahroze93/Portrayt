@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Nav from "../Nav/Nav";
 import Footer from "../Footer/Footer";
 import { ThemeProvider } from "styled-components";
@@ -8,11 +8,17 @@ import { useState } from "react";
 import FloatingBanner from "../FloatingBanner/FloatingBanner";
 
 export default function Layout(props) {
-  const { currentUser, handleLogout } = props;
+  const { currentUser, handleLogout, now } = props;
   const [theme, setTheme] = useState("light");
   const themeToggler = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
   };
+
+  useEffect(() => {
+    if (now > 18) {
+      setTheme("dark");
+    }
+  }, [now]);
 
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
