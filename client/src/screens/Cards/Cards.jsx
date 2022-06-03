@@ -11,6 +11,8 @@ function Cards(props) {
         <Link to={`/posts/${post.id}`}>
           <img
             loading="lazy"
+            importance="auto"
+            decoding="async"
             className="cardImage"
             src={post.img_url}
             alt={post.name}
@@ -26,7 +28,7 @@ function Cards(props) {
             {post.user?.username}
           </Link>
           <Link className="cardName" to={`/posts/${post.id}`}>
-            {post.name}
+            <h1>{post.name}</h1>
           </Link>
         </div>
         <hr />

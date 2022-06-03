@@ -11,7 +11,7 @@ export default function Nav(props) {
         <input id="nav-toggle" type="checkbox" />
         <div className="logoBox">
           <Link rel="preload" className="logoLink" to="/">
-            PORTRAYT
+            <h1>PORTRAYT</h1>
           </Link>
           {currentUser && (
             <Link className="userLink" to="/myposts">
